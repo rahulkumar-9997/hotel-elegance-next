@@ -57,7 +57,7 @@ export const Header = () => {
 
     return (
         <header>
-            <div className="header-top">
+            <div className="header-top hidden lg:block">
                 <div className="container">
                     <div className="inner-box">
                         {/* top-left */}

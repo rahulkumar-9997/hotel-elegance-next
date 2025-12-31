@@ -105,9 +105,9 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                             {...getAOSProps(600)}
                         >
                             <div className="text-center">
-                                <a href="/near-by-place" className="btn rx-btn-two">
+                                <Link href="/near-by-place" className="btn rx-btn-two">
                                     View More Places in Varanasi
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     )}

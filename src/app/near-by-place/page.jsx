@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
-import Image from 'next/image'; // Added for optimized images
+import Image from 'next/image';
 
-export default function NeatByPlaceDetailsPage() {
+export default function NeatByPlaceListPage() {
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -30,7 +30,7 @@ export default function NeatByPlaceDetailsPage() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="rx-banner-contact">
-                                            <h2>Restaurant</h2>
+                                            <h2>Near By Place</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@ export default function NeatByPlaceDetailsPage() {
                             data-aos-duration={1000}
                         >
                             <div className="rx-blog-details-sidebar">
-                                
+
                                 <div className="rx-recent-post">
                                     <h5 className="sub-title">Recent Posts</h5>
                                     <div className="recent-inner-post">
@@ -179,7 +179,7 @@ export default function NeatByPlaceDetailsPage() {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>

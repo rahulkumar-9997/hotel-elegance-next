@@ -6741,3 +6741,10 @@ figure {
     color: #555555;
     font-weight: 400;
 }
+
+@media screen and (max-width: 991px) {
+  header .rx-header {
+    position: relative;
+  }
+}
+
