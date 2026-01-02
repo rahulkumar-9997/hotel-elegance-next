@@ -186,7 +186,7 @@ export default function Banner({ initialVideo }) {
                             <Button
                             variant='default'
                                 type="submit"
-                                className="w-full px-3 py-3 rounded bg-[#410f06] text-white font-semibold rounded transition-all duration-300 flex items-center justify-center hover:bg-gray-100 hover:shadow-lg transform hover:-translate-y-0.5"
+                                className="w-full rounded bg-[#410f06] text-white font-semibold rounded transition-all duration-300 flex items-center justify-center hover:bg-gray-100 hover:shadow-lg transform hover:-translate-y-0.5"
                                 id="check-availability"
                                 disabled={isLoading || !arrivalDate || !departureDate || !phoneNumber}
                             >
