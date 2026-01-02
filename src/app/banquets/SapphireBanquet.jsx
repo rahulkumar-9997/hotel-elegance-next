@@ -1,7 +1,10 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Image from 'next/image';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import { Fancybox } from '@fancyapps/ui';
 import { imageTosvg } from '@/utils/imageToSvg';
 import {
     Carousel,
@@ -12,28 +15,48 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-export const SapphireBanquet = () => {
-    const galleryImages = [
-        { id: 1, src: "assets/img/gallery/1.jpg", alt: "gallery-1" },
-        { id: 2, src: "assets/img/gallery/2.jpg", alt: "gallery-2" },
-        { id: 3, src: "assets/img/gallery/3.jpg", alt: "gallery-3" },
-        { id: 4, src: "assets/img/gallery/4.jpg", alt: "gallery-4" },
-        { id: 5, src: "assets/img/gallery/5.jpg", alt: "gallery-5" },
-        { id: 6, src: "assets/img/gallery/6.jpg", alt: "gallery-6" },
-        { id: 7, src: "assets/img/gallery/7.jpg", alt: "gallery-7" },
-        { id: 8, src: "assets/img/gallery/8.jpg", alt: "gallery-8" },
-        { id: 9, src: "assets/img/gallery/9.jpg", alt: "gallery-9" },
-        { id: 10, src: "assets/img/gallery/10.jpg", alt: "gallery-10" },
-        { id: 11, src: "assets/img/gallery/11.jpg", alt: "gallery-11" },
-        { id: 12, src: "assets/img/gallery/12.jpg", alt: "gallery-12" },
-    ];
-
+const SapphireBanquet = ({ sapphireData }) => {
+    const [isLoading, setIsLoading] = useState(!sapphireData);
+    const [galleryImages, setGalleryImages] = useState([]);
+    useEffect(() => {
+        if (sapphireData) {
+            setIsLoading(false);
+            if (sapphireData.data?.images) {
+                const images = sapphireData.data.images.map((img, index) => ({
+                    id: img.id || index + 1,
+                    src: img.image_url,
+                    alt: `sapphire-banquet-${index + 1}`
+                }));
+                setGalleryImages(images);
+            }
+        }
+    }, [sapphireData]);
     useEffect(() => {
         AOS.init({
             duration: 1000,
             once: true,
             offset: 100,
         });
+        if (galleryImages.length > 0) {
+            Fancybox.bind("[data-fancybox='gallery-sapphire']", {
+                Thumbs: {
+                    autoStart: true,
+                },
+                Toolbar: {
+                    display: {
+                        left: ["infobar"],
+                        middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
+                        right: ["slideshow", "download", "thumbs", "close"],
+                    },
+                },
+                Images: {
+                    zoom: true,
+                    zoomOpacity: "auto",
+                    click: "close",
+                    wheel: "slide",
+                },
+            });
+        }
         if (typeof window !== 'undefined') {
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', () => {
@@ -43,7 +66,65 @@ export const SapphireBanquet = () => {
                 imageTosvg();
             }
         }
-    }, []);
+        return () => {
+            Fancybox.destroy();
+        };
+    }, [galleryImages]);
+
+    if (isLoading) {
+        return (
+            <section className="section-gallery padding-tb-50 banquate">
+                <div className="container">
+                    <div className="text-center py-10">
+                        <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <p className="mt-3">Loading Sapphire banquet details...</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
+    if (!galleryImages.length) {
+        return (
+            <section className="section-gallery padding-tb-50 banquate">
+                <div className="container">
+                    <div className="row mb-minus-24 justify-content-md-center">
+                        <div className="col-md-8" data-aos="fade-up" data-aos-duration="1000">
+                            <div className="rx-banner text-center rx-banner-effects">
+                                <p>
+                                    <img
+                                        src="assets/img/banner/left-shape.svg"
+                                        alt="banner-left-shape"
+                                        className="svg-img left-side"
+                                    />
+                                    Sapphire Banquet
+                                    <img
+                                        src="assets/img/banner/right-shape.svg"
+                                        alt="banner-right-shape"
+                                        className="svg-img right-side"
+                                    />
+                                </p>
+                                <h1>
+                                    Celebrate Moments in Unmatched Elegance.
+                                </h1>
+
+                                <div className="mt-3">
+                                    <p>
+                                        The Elegance Hotel offers you Sapphire Banquet, the Best Banquet in Varanasi near DLW and BHU. If you have a Engagement, Birthday Party, Reception, Family Get Together, Wedding Anniversary, Ring Ceremony, Sangeet & Mehandi Function, Wedding or any family event coming up in your family and booking a perfect Banquet Hall is 1st priority, Sapphire Banquet by Hotel Elegance is the Best Option.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="text-center py-5">
+                        <p>No gallery images available at the moment.</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className="section-gallery padding-tb-50 banquate">
@@ -110,10 +191,13 @@ export const SapphireBanquet = () => {
                                                         href={image.src}
                                                         data-fancybox="gallery-sapphire"
                                                     >
-                                                        <img
+                                                        <Image
                                                             src={image.src}
                                                             alt={image.alt}
                                                             className="w-full h-48 md:h-56 lg:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                                                            width={350}
+                                                            height={350}
+                                                            sizes='300'
                                                         />
                                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                                                     </a>
@@ -143,3 +227,5 @@ export const SapphireBanquet = () => {
         </section>
     );
 };
+
+export default SapphireBanquet;

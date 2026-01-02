@@ -1,8 +1,10 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
+import Image from 'next/image';
 import 'aos/dist/aos.css';
-import { imageTosvg } from '@/utils/imageToSvg';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import { Fancybox } from '@fancyapps/ui';
 import {
     Carousel,
     CarouselContent,
@@ -11,25 +13,49 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-
-export const OnexBanquet = ({ onexData }) => {
+const OnexBanquet = ({ onexData }) => {
     const [isLoading, setIsLoading] = useState(!onexData);
     const [banquetData, setBanquetData] = useState(onexData?.data || null);
-
     useEffect(() => {
         AOS.init({
             duration: 1000,
             once: true,
             offset: 100,
         });
-        
+        Fancybox.bind("[data-fancybox='gallery-onex']", {
+            Thumbs: {
+                autoStart: true,
+            },
+            Toolbar: {
+                display: {
+                    left: ["infobar"],
+                    middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
+                    right: ["slideshow", "download", "thumbs", "close"],
+                },
+            },
+            Images: {
+                zoom: true,
+                zoomOpacity: "auto",
+                click: "close",
+                wheel: "slide",
+            },
+        });
+        return () => {
+            Fancybox.destroy();
+        };
     }, []);
+
+    useEffect(() => {
+        if (onexData) {
+            setBanquetData(onexData.data);
+            setIsLoading(false);
+        }
+    }, [onexData]);
     const galleryImages = banquetData?.images?.map((img, index) => ({
         id: img.id || index + 1,
         src: img.image_url,
         alt: `onex-banquet-${index + 1}`
-    })) || defaultGalleryImages;
-
+    }));
     if (isLoading) {
         return (
             <section className="section-gallery padding-tb-50 banquate">
@@ -111,10 +137,13 @@ export const OnexBanquet = ({ onexData }) => {
                                                         href={image.src}
                                                         data-fancybox="gallery-onex"
                                                     >
-                                                        <img
+                                                        <Image
                                                             src={image.src}
                                                             alt={image.alt}
                                                             className="w-full h-48 md:h-56 lg:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                                                            width={350}
+                                                            height={350}
+                                                            sizes='300'
                                                         />
                                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                                                     </a>
@@ -147,3 +176,4 @@ export const OnexBanquet = ({ onexData }) => {
         </section>
     );
 };
+export default OnexBanquet;

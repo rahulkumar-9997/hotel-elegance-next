@@ -1,8 +1,6 @@
-// app/banquets/page.js
 import React from 'react';
-import OnexBanquet from './OnexBanquet';
-import SapphireBanquet from './SapphireBanquet';
-
+import OnexBanquet from './OnexBanquet'; 
+import SapphireBanquet from './SapphireBanquet'; 
 async function getOnexBanquetData() {
     try {
         const res = await fetch(
@@ -18,7 +16,6 @@ async function getOnexBanquetData() {
         return null;
     }
 }
-
 async function getSapphireBanquetData() {
     try {
         const res = await fetch(
@@ -35,7 +32,6 @@ async function getSapphireBanquetData() {
         return null;
     }
 }
-
 export async function generateMetadata() {
     try {
         const onexData = await getOnexBanquetData();
@@ -60,12 +56,10 @@ export async function generateMetadata() {
 }
 
 export default async function BanquetsPage() {
-    // Fetch both banquet data in parallel
     const [onexData, sapphireData] = await Promise.all([
         getOnexBanquetData(),
         getSapphireBanquetData(),
-    ]);
-  
+    ]);  
     return (
         <>
             <section className="section-breadcrumb padding-b-50">
@@ -89,7 +83,7 @@ export default async function BanquetsPage() {
             
             {/* Pass fetched data as props */}
             <OnexBanquet onexData={onexData} />
-            {/* {sapphireData && <SapphireBanquet sapphireData={sapphireData} />} */}
+            <SapphireBanquet sapphireData={sapphireData} />
         </>
     );
 }
