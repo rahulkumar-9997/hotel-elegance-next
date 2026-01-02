@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import Link from 'next/link';    
 const Footer = () => {
     return (
         <>
@@ -55,23 +55,27 @@ const Footer = () => {
                                     <div className="rx-items-contact">
                                         <ul>
                                             <li>
-                                                <a href="#">Room</a>
+                                                <Link href="/rooms">Room</Link>
                                             </li>
                                             <li>
-                                                <a href="#">Restaurant</a>
+                                                <Link href="/restaurant">Restaurant</Link>
                                             </li>
                                             <li>
-                                                <a href="#">Banquets</a>
+                                                <Link href="/banquets">Banquets</Link>
                                             </li>
                                             <li>
-                                                <a href="#">Bar &amp; Lounge</a>
+                                                <Link href="/tafri-lounge">Tafri Lounge</Link>
                                             </li>
                                             <li>
-                                                <a href="#">Facilities</a>
+                                                <Link href="/facilities">Facilities</Link>
                                             </li>
                                             <li>
-                                                <a href="#">Gallery</a>
+                                                <Link href="/gallery">Gallery</Link>
                                             </li>
+                                            <li>
+                                                <Link href="/contact">Contact Us</Link>
+                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>

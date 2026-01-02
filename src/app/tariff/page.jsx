@@ -26,7 +26,7 @@ export default function tariffPage() {
     const rooms = [
         {
             title: "SUITE ROOM",
-            image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+            image: "/assets/dev-img/room/page/suite-room-w15.jpg",
             doublePrice: "Rs. 7500",
             singlePrice: "Rs. 6500",
             features: ["Luxury Living", "City View", "Private Balcony", "King Size Bed"],
@@ -34,7 +34,7 @@ export default function tariffPage() {
         },
         {
             title: "PREMIUM ROOM",
-            image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90",
+            image: "/assets/dev-img/room/page/premium-room.jpg",
             doublePrice: "Rs. 6000",
             singlePrice: "Rs. 5000",
             features: ["Spacious", "Work Desk", "Double Bed"],
@@ -42,7 +42,7 @@ export default function tariffPage() {
         },
         {
             title: "STANDARD ROOM",
-            image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a",
+            image: "/assets/dev-img/room/page/standard-room.jpg",
             doublePrice: "Rs. 5000",
             singlePrice: "Rs. 4000",
             features: ["Comfort Plus", "Garden View", "Coffee Maker"],
@@ -143,7 +143,7 @@ export default function tariffPage() {
                                                     translateZ="50"
                                                     className="text-2xl font-bold text-gray-900 mb-2"
                                                 >
-                                                    <h3 className="text-[#410f06]">{room.title}</h3>
+                                                    <h4 className="text-[#410f06]">{room.title}</h4>
                                                 </CardItem>
                                                 <div className="mb-6">
                                                     <div className="flex flex-wrap gap-2 mt-4">
