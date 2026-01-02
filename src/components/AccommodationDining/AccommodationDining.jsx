@@ -1,8 +1,10 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
+import EnquiryModal from '../EnquiryModal/EnquiryModal';
+
 import {
     Carousel,
     CarouselContent,
@@ -13,6 +15,8 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 export const AccommodationDining = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [title, setTitle] = useState("");
     const [items] = React.useState([
         {
             id: 1,
@@ -73,98 +77,109 @@ export const AccommodationDining = () => {
     }, []);
 
     return (
-        <section className="section-amenities padding-tb-50 about-bg-first text-bg-white">
-            <div
-                className="about-two__bg"
-                style={{ backgroundImage: "url(assets/dev-img/elegance-bg.jpg  )" }}
-            />
-            <div className="container">
-                <div className="row">
-                    <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
-                        <div className="rx-banner text-center rx-banner-effects">
-                            <p>
-                                <img
-                                    src="assets/img/banner/left-shape.svg"
-                                    alt="banner-left-shape"
-                                    className="svg-img left-side"
-                                />
-                                The Elegance
-                                <img
-                                    src="assets/img/banner/right-shape.svg"
-                                    alt="banner-right-shape"
-                                    className="svg-img right-side"
-                                />
-                            </p>
-                            <h4>
-                                Accommodation and <span style={{ color: "#fff" }}>Dining</span>
-                            </h4>
+        <>
+            <section className="section-amenities padding-tb-50 about-bg-first text-bg-white">
+                <div
+                    className="about-two__bg"
+                    style={{ backgroundImage: "url(assets/dev-img/elegance-bg.jpg  )" }}
+                />
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
+                            <div className="rx-banner text-center rx-banner-effects">
+                                <p>
+                                    <img
+                                        src="assets/img/banner/left-shape.svg"
+                                        alt="banner-left-shape"
+                                        className="svg-img left-side"
+                                    />
+                                    The Elegance
+                                    <img
+                                        src="assets/img/banner/right-shape.svg"
+                                        alt="banner-right-shape"
+                                        className="svg-img right-side"
+                                    />
+                                </p>
+                                <h4>
+                                    Accommodation and <span style={{ color: "#fff" }}>Dining</span>
+                                </h4>
+                            </div>
+                        </div>
+                        <div
+                            className="col-12"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-delay="200"
+                        >
+                            <Carousel
+                                className="w-full"
+                                opts={{
+                                    loop: true,
+                                    align: "start",
+                                    skipSnaps: false,
+                                    duration: 20,
+                                }}
+                                plugins={[
+                                    Autoplay({
+                                        delay: 4000,
+                                        stopOnInteraction: false,
+                                    }),
+                                ]}
+                            >
+                                <CarouselContent>
+                                    {items.map((item) => (
+                                        <CarouselItem key={item.id}>
+                                            <div className="row mb-minus-24">
+                                                <div className="col-lg-7 col-12 mb-24">
+                                                    <div className="rx-amenities-img h-full">
+                                                        <img
+                                                            src={item.bigImage}
+                                                            alt={item.title}
+                                                            className="w-full h-full object-cover"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-5 col-12 mb-24">
+                                                    <div className="rx-amenities-contact amenities-animation h-full">
+                                                        <div className="inner-banner">
+                                                            {item.logo && (
+                                                                <div className="acco-logo-area">
+                                                                    <img src={item.logo} alt={`${item.title} logo`} />
+                                                                </div>
+                                                            )}
+                                                            <h4>{item.title}</h4>
+                                                            <h5>{item.subtitle}</h5>
+                                                        </div>
+                                                        <p>{item.description}</p>
+                                                        <div className="amenities-btn">
+                                                            <a className="rx-btn-two rounded cursor-pointer"  
+                                                                onClick={() => {
+                                                                    setTitle(item.title)
+                                                                    setIsModalOpen(true)
+                                                                }}>
+                                                                Book Now
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                                <div className="flex justify-center gap-4 mt-2">
+                                    <CarouselPrevious className="relative static transform-none left-0 right-0 top-0 -translate-y-0" />
+                                    <CarouselNext className="relative static transform-none left-0 right-0 top-0 -translate-y-0" />
+                                </div>
+                            </Carousel>
                         </div>
                     </div>
-                    <div
-                        className="col-12"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="200"
-                    >
-                        <Carousel
-                            className="w-full"
-                            opts={{
-                                loop: true,
-                                align: "start",
-                                skipSnaps: false,
-                                duration: 20,
-                            }}
-                            plugins={[
-                                Autoplay({
-                                    delay: 4000,
-                                    stopOnInteraction: false,
-                                }),
-                            ]}
-                        >
-                            <CarouselContent>
-                                {items.map((item) => (
-                                    <CarouselItem key={item.id}>
-                                        <div className="row mb-minus-24">
-                                            <div className="col-lg-7 col-12 mb-24">
-                                                <div className="rx-amenities-img h-full">
-                                                    <img
-                                                        src={item.bigImage}
-                                                        alt={item.title}
-                                                        className="w-full h-full object-cover"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-5 col-12 mb-24">
-                                                <div className="rx-amenities-contact amenities-animation h-full">
-                                                    <div className="inner-banner">
-                                                        {item.logo && (
-                                                            <div className="acco-logo-area">
-                                                                <img src={item.logo} alt={`${item.title} logo`} />
-                                                            </div>
-                                                        )}
-                                                        <h4>{item.title}</h4>
-                                                        <h5>{item.subtitle}</h5>
-                                                    </div>
-                                                    <p>{item.description}</p>
-                                                    <div className="amenities-btn">
-                                                        <a href="#" className="rx-btn-two">
-                                                            Book Now
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                            <div className="flex justify-center gap-4 mt-2">
-                                <CarouselPrevious className="relative static transform-none left-0 right-0 top-0 -translate-y-0" />
-                                <CarouselNext className="relative static transform-none left-0 right-0 top-0 -translate-y-0" />
-                            </div>
-                        </Carousel>
-                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <EnquiryModal
+                isOpen={isModalOpen}
+                title={title}
+                onClose={() => setIsModalOpen(false)}
+            />
+        </>
     );
 };

@@ -1,8 +1,9 @@
 "use client";
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
-
+import EnquiryModal from '../EnquiryModal/EnquiryModal';
 export const Header = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [isHeaderFixed, setIsHeaderFixed] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const mobileMenuRef = useRef(null);
@@ -153,10 +154,8 @@ export const Header = () => {
                                     </ul>
                                     <div className="header-button">
                                         <a
-                                            href="javascript:void(0)"
-                                            className="rx-btn-one rounded"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#rx_booking_from"
+                                            className="rx-btn-one rounded cursor-pointer"
+                                            onClick={() => setIsModalOpen(true)}
                                         >
                                             Book Now
                                         </a>
@@ -317,6 +316,11 @@ export const Header = () => {
                     </div>
                 </div>
             </div>
+            <EnquiryModal 
+                isOpen={isModalOpen}
+                title="Contact Us" 
+                onClose={() => setIsModalOpen(false)} 
+            />
         </header>
     );
 };
