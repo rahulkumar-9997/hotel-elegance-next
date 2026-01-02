@@ -6760,5 +6760,11 @@ figure {
   header .rx-header {
     position: relative;
   }
+  .rx-inner-menu-desk .rx-header-btn{
+    position: relative;
+  }
+  header .rx-header {
+    padding: 8px 0;
+  }
 }
 
