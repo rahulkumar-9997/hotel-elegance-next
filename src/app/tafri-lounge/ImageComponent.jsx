@@ -1,46 +1,86 @@
-import React, { useEffect, useRef } from 'react';
+"use client";
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { Fancybox } from '@fancyapps/ui';
+import { imageTosvg } from '@/utils/imageToSvg';
+import Image from 'next/image';
+const ImageComponent = ({ imagesData }) => {
+    const galleryImages = imagesData?.data?.images?.map((img, index) => ({
+        id: img.id || index + 1,
+        src: img.image_url,
+        alt: img.title || `gallery-${index + 1}`
+    })) || [];
 
-export const ImageComponent = () => {
-    const galleryImages = [
-        { id: 1, src: "assets/img/gallery/1.jpg", alt: "gallery-1" },
-        { id: 2, src: "assets/img/gallery/2.jpg", alt: "gallery-2" },
-        { id: 3, src: "assets/img/gallery/3.jpg", alt: "gallery-3" },
-        { id: 4, src: "assets/img/gallery/4.jpg", alt: "gallery-4" },
-        { id: 5, src: "assets/img/gallery/5.jpg", alt: "gallery-5" },
-        { id: 6, src: "assets/img/gallery/6.jpg", alt: "gallery-6" },
-        { id: 7, src: "assets/img/gallery/7.jpg", alt: "gallery-7" },
-        { id: 8, src: "assets/img/gallery/8.jpg", alt: "gallery-8" },
-        { id: 9, src: "assets/img/gallery/9.jpg", alt: "gallery-9" },
-        { id: 10, src: "assets/img/gallery/10.jpg", alt: "gallery-10" },
-        { id: 11, src: "assets/img/gallery/11.jpg", alt: "gallery-11" },
-        { id: 12, src: "assets/img/gallery/12.jpg", alt: "gallery-12" }
-    ];
     useEffect(() => {
-        Fancybox.bind("[data-fancybox='gallery']", {
-            Thumbs: {
-                autoStart: false,
-            },
-            Toolbar: {
-                display: {
-                    left: ["infobar"],
-                    middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
-                    right: ["slideshow", "download", "thumbs", "close"],
-                },
-            },
-            Images: {
-                zoom: true,
-            },
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
         });
+
+        if (typeof window !== 'undefined') {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    imageTosvg();
+                });
+            } else {
+                imageTosvg();
+            }
+        }
+        if (galleryImages.length > 0) {
+            Fancybox.bind("[data-fancybox='gallery']", {
+                Thumbs: {
+                    autoStart: false,
+                },
+                Toolbar: {
+                    display: {
+                        left: ["infobar"],
+                        middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
+                        right: ["slideshow", "download", "thumbs", "close"],
+                    },
+                },
+                Images: {
+                    zoom: true,
+                },
+            });
+        }
         return () => {
             Fancybox.destroy();
         };
-    }, []);
+    }, [galleryImages]);
+
     const getAnimationDelay = (index) => {
         const delays = [null, "200", "400", "600"];
         return delays[index % 4];
     };
+    if (!imagesData) {
+        return (
+            <section className="section-gallery pt-1 pb-10">
+                <div className="container">
+                    <div className="text-center py-10">
+                        <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <p className="mt-3">Loading gallery images...</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
+    if (!imagesData.status || !galleryImages.length) {
+        return (
+            <section className="section-gallery pt-1 pb-10">
+                <div className="container">
+                    <div className="text-center py-10">
+                        <p>No gallery images available at the moment.</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className="section-gallery pt-1 pb-10">
@@ -61,10 +101,13 @@ export const ImageComponent = () => {
                                     data-fancybox="gallery"
                                     data-caption={image.alt}
                                 >
-                                    <img
+                                    <Image
                                         src={image.src}
                                         alt={image.alt}
                                         loading="lazy"
+                                        width={350}
+                                        height={300}
+                                        sizes='300'
                                     />
                                     <div className="gallery-overlay">
                                         <div className="overlay-content">
@@ -80,3 +123,5 @@ export const ImageComponent = () => {
         </section>
     );
 };
+
+export default ImageComponent;

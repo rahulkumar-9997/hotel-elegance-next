@@ -1,26 +1,48 @@
-"use client";
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { imageTosvg } from '@/utils/imageToSvg';
-import { ImageComponent } from './ImageComponent';
-export default function TafriLoungePage() {
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-        });
-        if (typeof window !== 'undefined') {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => {
-                    imageTosvg();
-                });
-            } else {
-                imageTosvg();
-            }
+import React from 'react';
+import ImageComponent from './ImageComponent';
+
+async function getTafriLoungeImages() {
+    try {
+        const res = await fetch(
+            'https://www.inforbit.in/demo/hotel-elegance-backend/api/tafri-lounge-image',
+            { cache: 'no-store' }
+        );
+
+        if (!res.ok) {
+            throw new Error(`Failed to fetch Tafri Lounge images: ${res.status}`);
         }
-    }, []);
+        return await res.json();
+    } catch (error) {
+        console.error('Error fetching Tafri Lounge images:', error);
+        return null;
+    }
+}
+
+export async function generateMetadata() {
+    try {
+        const data = await getTafriLoungeImages();
+
+        if (!data?.status) {
+            return {
+                title: 'Tafri Lounge - Hotel Elegance',
+                description: 'Best lounge in Varanasi near BHU for chilling and relaxation',
+            };
+        }
+
+        return {
+            title: 'Tafri Lounge by Elegance - Best Lounge in Varanasi',
+            description: 'Experience the best lounge in Varanasi near BHU. Tafri Lounge by Hotel Elegance offers vibrant atmosphere, music, and drinks.',
+        };
+    } catch (error) {
+        return {
+            title: 'Tafri Lounge - Hotel Elegance',
+            description: 'Premium lounge experience in Varanasi',
+        };
+    }
+}
+
+export default async function TafriLoungePage() {
+    const imagesData = await getTafriLoungeImages();
     return (
         <>
             <section className="section-breadcrumb padding-b-50">
@@ -116,7 +138,7 @@ export default function TafriLoungePage() {
                     </div>
                 </div>
             </section>
-            <ImageComponent/>
+            <ImageComponent imagesData={imagesData} />
         </>
     )
 }
