@@ -7,7 +7,6 @@ async function getOnexBanquetData() {
         const res = await fetch(
             'https://www.inforbit.in/demo/hotel-elegance-backend/api/banquets/onex-banquet'
         ); 
-
         if (!res.ok) {
             throw new Error(`Failed to fetch Onex Banquet data: ${res.status}`);
         }        

@@ -153,22 +153,22 @@ export const Header = () => {
                                 <div className="rx-main-menu" id="navbarSupportedContent">
                                     <ul className="navbar-nav">
                                         <li className="nav-item">
-                                            <Link className="nav-link" href="/rooms">
+                                            <Link className="nav-link" href="/hotel-rooms-in-varanasi">
                                                 Rooms
                                             </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" href="/restaurant">
+                                            <Link className="nav-link" href="/budget-restaurant-varanasi">
                                                 Restaurant
                                             </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" href="/banquets">
+                                            <Link className="nav-link" href="/best-banquet-budget-varanasi">
                                                 Banquets
                                             </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" href="/tafri-lounge">
+                                            <Link className="nav-link" href="/best-lounge-varansasi-tafri-elegance">
                                                 Tafri Lounge
                                             </Link>
                                         </li>

@@ -21,7 +21,7 @@ export const Flyers = ({ initialFlyers = [] }) => {
                     >
                         <div className="other-hotel">
                             <div className="other-hotels-container">
-                                <a href={flyer.link || "https://www.instagram.com/theelegancehotel/"}>
+                                <a target="_blank" href={flyer.link || "https://www.instagram.com/theelegancehotel/"}>
                                     <img src={flyer.image_url} alt={`Instagram Flyer ${index + 1}`}/>
                                 </a>
                             </div>
