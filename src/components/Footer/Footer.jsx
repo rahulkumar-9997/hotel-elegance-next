@@ -57,16 +57,16 @@ const Footer = () => {
                                     <div className="rx-items-contact">
                                         <ul>
                                             <li>
-                                                <Link href="/rooms">Room</Link>
+                                                <Link href="/hotel-rooms-in-varanasi">Room</Link>
                                             </li>
                                             <li>
-                                                <Link href="/restaurant">Restaurant</Link>
+                                                <Link href="/budget-restaurant-varanasi">Restaurant</Link>
                                             </li>
                                             <li>
-                                                <Link href="/banquets">Banquets</Link>
+                                                <Link href="/best-banquet-budget-varanasi">Banquets</Link>
                                             </li>
                                             <li>
-                                                <Link href="/tafri-lounge">Tafri Lounge</Link>
+                                                <Link href="/best-lounge-varansasi-tafri-elegance">Tafri Lounge</Link>
                                             </li>
                                             <li>
                                                 <Link href="/facilities">Facilities</Link>
