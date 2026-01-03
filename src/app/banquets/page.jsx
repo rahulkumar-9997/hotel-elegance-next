@@ -17,6 +17,7 @@ async function getOnexBanquetData() {
         return null;
     }
 }
+
 async function getSapphireBanquetData() {
     try {
         const res = await fetch(
