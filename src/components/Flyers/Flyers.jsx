@@ -17,7 +17,7 @@ export const Flyers = ({ initialFlyers = [] }) => {
                     {initialFlyers?.length > 0 &&
                     initialFlyers.map((flyer, index) => (
                     <div key={flyer.id}
-                        className="col-lg-4"                       
+                        className="col-lg-4 pb-3"                       
                     >
                         <div className="other-hotel">
                             <div className="other-hotels-container">

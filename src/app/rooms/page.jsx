@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
-
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 export default function RoomsPage() {
     useEffect(() => {
         AOS.init({
@@ -23,26 +23,11 @@ export default function RoomsPage() {
     }, []);
     return (
         <>
-            <section className="section-breadcrumb padding-b-50">
-                <div className="rx-breadcrumb-image">
-                    <div className="rx-breadcrumb-overlay" />
-                    <div className="inner-breadcrumb-contact sub_header_content">
-                        <div className="main-breadcrumb-contact">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="rx-banner-contact">
-                                            <h1>Room</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </section>
-
+            <Breadcrumb 
+                title="Rooms" 
+                backgroundImage="/assets/dev-img/bread-banner/Rooms.jpg"
+                subtitle=""
+            />
             <section className="section-room padding-t-50 padding-b-50">
                 <div className="container">
                     <div className="row mb-minus-24">                        

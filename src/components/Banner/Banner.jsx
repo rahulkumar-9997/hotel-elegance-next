@@ -66,7 +66,7 @@ export default function Banner({ initialVideo }) {
                     <div className="container desktop">
 
                         {/* Arrival Date */}
-                        <div className="flex flex-col space-y-2 min-w-[150px]">
+                        <div className="flex flex-col space-y-2 w-full">
                             <Label htmlFor="arrival" className="text-sm font-medium text-gray-700 heading">
                                 Arrive
                             </Label>
@@ -75,7 +75,7 @@ export default function Banner({ initialVideo }) {
                                     <Button
                                         variant={"outline"}
                                         className={cn(
-                                            "w-full justify-start text-left font-normal px-1 py-3 rounded",
+                                            "w-full justify-start text-left font-normal px-3 py-2 rounded",
                                             !arrivalDate && "text-muted-foreground"
                                         )}
                                         id="arrival"
@@ -102,7 +102,7 @@ export default function Banner({ initialVideo }) {
                         </div>
 
                         {/* Departure Date */}
-                        <div className="flex flex-col space-y-2 min-w-[150px]">
+                        <div className="flex flex-col space-y-2 w-full">
                             <Label htmlFor="departure" className="text-sm font-medium text-gray-700 heading">
                                 Depart
                             </Label>
@@ -143,12 +143,12 @@ export default function Banner({ initialVideo }) {
                         </div>
 
                         {/* Adults Select */}
-                        <div className="flex flex-col space-y-2 min-w-[120px]">
+                        <div className="flex flex-col space-y-2 w-full">
                             <Label htmlFor="guests" className="text-sm font-medium text-gray-700 heading">
                                 Adults
                             </Label>
                             <select
-                                className="occupants w-full px-3 py-2 border border-input bg-background rounded-md text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                                className="occupants w-full px-3 py-1.5 border border-input bg-background rounded-md text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                                 name="adult"
                                 id="guests"
                                 value={adults}
@@ -163,12 +163,12 @@ export default function Banner({ initialVideo }) {
                         </div>
 
                         {/* Phone Number */}
-                        <div className="flex flex-col space-y-2 min-w-[200px]">
+                        <div className="flex flex-col space-y-2 w-full">
                             <Label htmlFor="phone" className="text-sm font-medium text-gray-700 heading">
                                 Phone No.
                             </Label>
                             <input
-                                className="promo-code"
+                                className="promo-code border px-3 py-2 rounded"
                                 type="text"
                                 id="phone"
                                 name="phone_number"
@@ -182,7 +182,7 @@ export default function Banner({ initialVideo }) {
                         </div>
 
                         {/* Submit Button */}
-                        <div className="text-center">
+                        <div className="text-center mt-3">
                             <Button
                             variant='default'
                                 type="submit"

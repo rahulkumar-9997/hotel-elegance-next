@@ -82,7 +82,7 @@ export default function AlbumGallery({ initialData, currentAlbumId }) {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="mb-10">
-                                <div className="flex justify-center gap-3">
+                                <div className="flex justify-center gap-3 gallery-button">
                                     {albums.map((album) => (
                                         <button
                                             key={album.id}

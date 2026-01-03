@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageComponent from './ImageComponent';
-
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 async function getTafriLoungeImages() {
     try {
         const res = await fetch(
@@ -45,25 +45,11 @@ export default async function TafriLoungePage() {
     const imagesData = await getTafriLoungeImages();
     return (
         <>
-            <section className="section-breadcrumb padding-b-50">
-                <div className="rx-breadcrumb-image">
-                    <div className="rx-breadcrumb-overlay" />
-                    <div className="inner-breadcrumb-contact sub_header_content">
-                        <div className="main-breadcrumb-contact">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="rx-banner-contact">
-                                            <h1>Tafri Lounge by Elegance</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+            <Breadcrumb 
+                title="Tafri Lounge by Elegance" 
+                backgroundImage="/assets/dev-img/bread-banner/Taffri.jpg"
+                subtitle=""
+            />
             <section className="section-menu padding-t-50 padding-b-50">
                 <div className="container">
                     <div className="row">

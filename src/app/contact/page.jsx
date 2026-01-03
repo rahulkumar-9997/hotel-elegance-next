@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
-
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 export default function ContactUsPage() {
     const [formData, setFormData] = useState({
         title: 'Contact Page Enquiry',
@@ -150,24 +150,11 @@ export default function ContactUsPage() {
     return (
         <>
             {/* Breadcrumb */}
-            <section className="section-breadcrumb">
-                <div className="rx-breadcrumb-image">
-                    <div className="rx-breadcrumb-overlay" />
-                    <div className="inner-breadcrumb-contact sub_header_content">
-                        <div className="main-breadcrumb-contact">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="rx-banner-contact">
-                                            <h1>Contact Us</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Breadcrumb 
+                title="Contact Us" 
+                backgroundImage="/assets/img/banner/banner.jpg"
+                subtitle=""
+            />
             <section className="py-10 md:py-10 bg-gradient-to-b from-gray-50 to-white contact-us-card">
                 <div className="max-w-7xl mx-auto px-1 sm:px-1 lg:px-1">
                     <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -222,7 +209,7 @@ export default function ContactUsPage() {
                                     <div>
                                         <a
                                             href="tel:+918810719088"
-                                            className="text-gray-900 hover:text-primary transition-colors duration-300 text-lg font-medium block"
+                                            className="text-black! transition-colors duration-300 text-lg font-medium block"
                                         >
                                             +91 88107 19088
                                         </a>

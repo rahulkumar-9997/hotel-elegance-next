@@ -78,7 +78,7 @@ export const AccommodationDining = () => {
 
     return (
         <>
-            <section className="section-amenities padding-tb-50 about-bg-first text-bg-white">
+            <section className="section-amenities padding-tb-50 about-bg-first text-bg-white accomndation-section">
                 <div
                     className="about-two__bg"
                     style={{ backgroundImage: "url(assets/dev-img/elegance-bg.jpg  )" }}

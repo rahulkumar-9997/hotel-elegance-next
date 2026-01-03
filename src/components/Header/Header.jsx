@@ -2,12 +2,16 @@
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 import EnquiryModal from '../EnquiryModal/EnquiryModal';
+import { usePathname } from 'next/navigation';
+
 export const Header = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isHeaderFixed, setIsHeaderFixed] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const mobileMenuRef = useRef(null);
     const overlayRef = useRef(null);
+    const pathname = usePathname();
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -23,19 +27,50 @@ export const Header = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    // Close mobile menu when route changes
+    useEffect(() => {
+        closeMobileMenu();
+    }, [pathname]);
+
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
+
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
+        // Reset any open submenus
+        const activeMenus = document.querySelectorAll('.rx-menu-inner li.active');
+        activeMenus.forEach(menu => {
+            menu.classList.remove('active');
+            const subMenu = menu.querySelector('.sub-menu');
+            if (subMenu) subMenu.style.display = 'none';
+        });
     };
+
+    const handleMobileMenuClick = (e) => {
+        // If clicking on a link (not a menu toggle), close the mobile menu
+        const target = e.target;
+        const isLink = target.tagName === 'A' && target.getAttribute('href');
+        const isLinkChild = target.closest('a') && target.closest('a').getAttribute('href');
+
+        if (isLink || isLinkChild) {
+            // Only close if it's not a "javascript:void(0)" link
+            const linkElement = isLink ? target : target.closest('a');
+            if (linkElement.getAttribute('href') !== 'javascript:void(0)') {
+                // Small delay to allow the click to register before closing
+                setTimeout(closeMobileMenu, 100);
+            }
+        }
+    };
+
     const handleSubmenuToggle = (e) => {
+        e.preventDefault();
         const target = e.target;
         const isMenuToggle = target.classList.contains('menu-toggle');
         const isParentWithSubmenu = target.closest('li')?.querySelector('.sub-menu');
 
         if ((target.getAttribute('href') === 'javascript:void(0)' || isMenuToggle) && isParentWithSubmenu) {
-            e.preventDefault();
             const parentLi = target.closest('li');
             const subMenu = parentLi.querySelector('.sub-menu');
 
@@ -43,6 +78,7 @@ export const Header = () => {
                 parentLi.classList.remove('active');
                 subMenu.style.display = 'none';
             } else {
+                // Close other open submenus
                 const activeMenus = parentLi.parentElement.querySelectorAll('li.active');
                 activeMenus.forEach(menu => {
                     menu.classList.remove('active');
@@ -50,6 +86,7 @@ export const Header = () => {
                     if (otherSubMenu) otherSubMenu.style.display = 'none';
                 });
 
+                // Open clicked submenu
                 parentLi.classList.add('active');
                 subMenu.style.display = 'block';
             }
@@ -189,98 +226,48 @@ export const Header = () => {
                         ×
                     </button>
                 </div>
-                <div className="rx-menu-inner">
-                    <div className="rx-menu-contact" onClick={handleSubmenuToggle}>
+                <div className="rx-menu-inner" onClick={handleMobileMenuClick}>
+                    <div className="rx-menu-contact">
                         <ul>
                             <li>
-                                <a href="javascript:void(0)">Home</a>
-                                <span className="menu-toggle"></span>
-                                <ul className="sub-menu">
-                                    <li>
-                                        <a href="index.html">Hotel</a>
-                                    </li>
-                                    <li>
-                                        <a href="demo-2.html">Restaurant</a>
-                                    </li>
-                                </ul>
+                                <Link href="/rooms">
+                                    Rooms
+                                </Link>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Category</a>
-                                <span className="menu-toggle"></span>
-                                <ul className="sub-menu">
-                                    <li>
-                                        <a href="gallery.html">Gallery 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="gallery-2.html">Gallery 2</a>
-                                    </li>
-                                </ul>
+                                <Link href="/restaurant">
+                                    Restaurant
+                                </Link>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Room</a>
-                                <span className="menu-toggle"></span>
-                                <ul className="sub-menu">
-                                    <li>
-                                        <a href="rooms.html">Rooms 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="rooms-2.html">Rooms 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="rooms-3.html">Rooms 3</a>
-                                    </li>
-                                    <li>
-                                        <a href="room-details.html">Rooms details</a>
-                                    </li>
-                                </ul>
+                                <Link href="/banquets">
+                                    Banquets
+                                </Link>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Pages</a>
-                                <span className="menu-toggle"></span>
-                                <ul className="sub-menu">
-                                    <li>
-                                        <a href="about.html">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html">Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="facilities.html">Facilities</a>
-                                    </li>
-                                    <li>
-                                        <a href="team.html">Team</a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html">Contact</a>
-                                    </li>
-                                    <li>
-                                        <a href="faq.html">Faq</a>
-                                    </li>
-                                    <li>
-                                        <a href="spa.html">Spa</a>
-                                    </li>
-                                    <li>
-                                        <a href="checkout.html">Checkout</a>
-                                    </li>
-                                    <li>
-                                        <a href="signin.html">Login</a>
-                                    </li>
-                                </ul>
+                                <Link href="/tafri-lounge">
+                                    Tafri Lounge
+                                </Link>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Blog</a>
-                                <span className="menu-toggle"></span>
-                                <ul className="sub-menu">
-                                    <li>
-                                        <a href="blog.html">Blog</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-details.html">Blog Details</a>
-                                    </li>
-                                </ul>
+                                <Link href="/facilities">
+                                    Facilities
+                                </Link>
                             </li>
                             <li>
-                                <a href="restaurant.html">Restaurant</a>
+                                <Link href="/gallery">
+                                    Gallery
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/tariff">
+                                    Tariff
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/contact">
+                                    Contact Us
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -290,23 +277,24 @@ export const Header = () => {
                             <div className="header-top-social">
                                 <ul className="mb-0">
                                     <li className="list-inline-item">
-                                        <a href="javascript:void(0)">
+                                        <a
+                                            target="_blank"
+                                            href="https://www.facebook.com/theelegancehotel/"
+                                        >
                                             <i className="ri-facebook-fill" />
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="javascript:void(0)">
-                                            <i className="ri-twitter-fill" />
-                                        </a>
-                                    </li>
-                                    <li className="list-inline-item">
-                                        <a href="javascript:void(0)">
+                                        <a
+                                            target="_blank"
+                                            href="https://www.instagram.com/theelegancehotel/"
+                                        >
                                             <i className="ri-instagram-line" />
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="javascript:void(0)">
-                                            <i className="ri-linkedin-fill" />
+                                        <a href="https://api.whatsapp.com/send?phone=+918810719088&text=Hi! I need your help with a booking for Hotel Elegance">
+                                            <i className="ri-whatsapp-line" />
                                         </a>
                                     </li>
                                 </ul>
@@ -316,10 +304,10 @@ export const Header = () => {
                     </div>
                 </div>
             </div>
-            <EnquiryModal 
+            <EnquiryModal
                 isOpen={isModalOpen}
-                title="Contact Us" 
-                onClose={() => setIsModalOpen(false)} 
+                title="Contact Us"
+                onClose={() => setIsModalOpen(false)}
             />
         </header>
     );

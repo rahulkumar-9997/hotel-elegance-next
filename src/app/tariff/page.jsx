@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
 export default function tariffPage() {
     useEffect(() => {
@@ -54,24 +55,11 @@ export default function tariffPage() {
     return (
         <>
             {/* Breadcrumb */}
-            <section className="section-breadcrumb">
-                <div className="rx-breadcrumb-image">
-                    <div className="rx-breadcrumb-overlay" />
-                    <div className="inner-breadcrumb-contact sub_header_content">
-                        <div className="main-breadcrumb-contact">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="rx-banner-contact">
-                                            <h1>Tariff</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Breadcrumb 
+                title="Tariff" 
+                backgroundImage="/assets/img/banner/banner.jpg"
+                subtitle=""
+            />
             <section className="section-menu padding-t-100 padding-b-20">
                 <div className="container">
                     <div className="row justify-content-md-center">
@@ -90,10 +78,10 @@ export default function tariffPage() {
                                         className="svg-img right-side"
                                     />
                                 </p>
-                                <h1 className="text-4xl md:text-5xl font-bold mt-4 text-gray-900">
+                                <h1 className="text-4xl md:text-5xl font-bold mt-4 text-black">
                                     Best Tariff Rooms in Varanasi
                                 </h1>
-                                <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+                                <p className="mt-6 text-lg text-black max-w-3xl mx-auto">
                                     Are you planning a trip to Varanasi, India's heart of spirit? We'll guide you to the best spots to stay. Varanasi's got history and charm, and we want you comfy on your trip. Here's the best rooms at The Elegance Hotel:
                                 </p>
                             </div>
@@ -141,7 +129,7 @@ export default function tariffPage() {
                                             <div className="p-6">
                                                 <CardItem
                                                     translateZ="50"
-                                                    className="text-2xl font-bold text-gray-900 mb-2"
+                                                    className="text-2xl font-bold text-black mb-2"
                                                 >
                                                     <h4 className="text-[#410f06]">{room.title}</h4>
                                                 </CardItem>
@@ -150,7 +138,7 @@ export default function tariffPage() {
                                                         {room.features.map((feature, idx) => (
                                                             <span
                                                                 key={idx}
-                                                                className="px-3 py-1.5 bg-gray-50 text-gray-700 
+                                                                className="px-3 py-1.5 bg-gray-50
                                                                     text-xs font-medium rounded-full 
                                                                     border border-gray-200">
                                                                 {feature}
@@ -166,12 +154,12 @@ export default function tariffPage() {
                                                                     <span className="text-[#ffff] font-bold">1</span>
                                                                 </div>
                                                                 <div>
-                                                                    <p className="text-sm font-medium text-black-600">Single Occupancy</p>
+                                                                    <p className="text-sm font-medium text-black">Single Occupancy</p>
                                                                 </div>
                                                             </div>
                                                             <CardItem
                                                                 translateZ={30}
-                                                                className="text-xl font-bold text-gray-900"
+                                                                className="text-xl font-bold text-black"
                                                             >
                                                                 {room.singlePrice}
                                                             </CardItem>
@@ -182,12 +170,12 @@ export default function tariffPage() {
                                                                     <span className="text-white font-bold">2</span>
                                                                 </div>
                                                                 <div>
-                                                                    <p className="text-sm font-medium text-gray-700">Double Occupancy</p>
+                                                                    <p className="text-sm font-medium text-black">Double Occupancy</p>
                                                                 </div>
                                                             </div>
                                                             <CardItem
                                                                 translateZ={30}
-                                                                className="text-2xl font-bold text-gray-900"
+                                                                className="text-2xl font-bold text-black"
                                                             >
                                                                 {room.doublePrice}
                                                             </CardItem>
@@ -238,8 +226,8 @@ export default function tariffPage() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                         </svg>
                                     </span>
-                                    <span className="text-gray-700">
-                                        <span className="font-semibold text-gray-900">Extra Bed:</span> It's Rs. 1500 more
+                                    <span>
+                                        <span className="font-semibold text-black">Extra Bed:</span> It's Rs. 1500 more
                                     </span>
                                 </li>
                                 <li className="flex items-start p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
@@ -248,8 +236,8 @@ export default function tariffPage() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                         </svg>
                                     </span>
-                                    <span className="text-gray-700">
-                                        <span className="font-semibold text-gray-900">GST Taxes:</span> Will add to your bill
+                                    <span className="">
+                                        <span className="font-semibold text-black">GST Taxes:</span> Will add to your bill
                                     </span>
                                 </li>
                                 <li className="flex items-start p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
@@ -258,8 +246,8 @@ export default function tariffPage() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </span>
-                                    <span className="text-gray-700">
-                                        <span className="font-semibold text-gray-900">Check-in:</span> 12:00 PM | <span className="font-semibold text-gray-900">Check-out:</span> 11:00 AM
+                                    <span className="">
+                                        <span className="font-semibold text-black">Check-in:</span> 12:00 PM | <span className="font-semibold text-black">Check-out:</span> 11:00 AM
                                     </span>
                                 </li>
                                 <li className="flex items-start p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
@@ -269,7 +257,7 @@ export default function tariffPage() {
                                         </svg>
                                     </span>
                                     <div>
-                                        <span className="font-semibold text-gray-900">Room Availability:</span>
+                                        <span className="font-semibold text-black">Room Availability:</span>
                                         <div className="flex flex-wrap gap-2 mt-2">
                                             <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">2 Suite Rooms</span>
                                             <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">6 Premium Rooms</span>
@@ -288,7 +276,7 @@ export default function tariffPage() {
                                 </span>
                                 <div>
                                     <h4 className="text-xl font-bold text-[#410f06] mb-1">Booking Rules</h4>
-                                    <p className="text-gray-600">We aim to keep it simple and fair for all</p>
+                                    <p>We aim to keep it simple and fair for all</p>
                                 </div>
                             </div>
 
@@ -299,7 +287,7 @@ export default function tariffPage() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <p className="text-gray-700 bg-green-50 p-2 rounded-lg border border-green-100">
+                                    <p className="bg-green-50 p-2 rounded-lg border border-green-100">
                                         When you book your room, you must pay half the cost in advance, at least three days before your stay.
                                     </p>
                                 </div>
@@ -310,7 +298,7 @@ export default function tariffPage() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
-                                    <p className="text-gray-700 bg-blue-50 p-2 rounded-lg border border-blue-100">
+                                    <p className=" bg-blue-50 p-2 rounded-lg border border-blue-100">
                                         The Customer needs to pay at least 50% Advance 3 days prior to Check IN Date. The above condition will not be applicable in case of Advance less than 50% before 3 days.
                                     </p>
                                 </div>
@@ -365,10 +353,10 @@ export default function tariffPage() {
                                 </span>
                                 Experience Varanasi in Style
                             </h4>
-                            <p className="text-gray-700 mb-4">
+                            <p className="mb-4">
                                 Plan your Varanasi trip now! Check out our awesome rooms. Dream of staying in a Suite Room – big and fancy, perfect for anyone! Or relax in a Standard Room for a good night's sleep.
                             </p>
-                            <p className="text-gray-700">
+                            <p className="">
                                 Need more space? We can add an extra bed easily. Just make sure to book three days in advance – we're ready for you! Get ready for a great Varanasi trip – from old sights to busy markets, there's lots to see. Book your room today and let's start the adventure!
                             </p>
                         </div>
@@ -376,7 +364,7 @@ export default function tariffPage() {
                     <div className="mt-2">
                         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 md:gap-4">
                             <div className="noteThat bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-2 mb-2"> 
-                                <p className="text-gray-800 mb-0">
+                                <p className="text-blck mb-0">
                                     <strong>Please Note:</strong>
                                      In case of any Cancellation from the Hotel side, or failure in part of commitment from the Hotel regarding Room Reservations, we will refund the Advance amount paid by the Customer as well as additional Rs.1000 penalty per room. 
                                 </p>

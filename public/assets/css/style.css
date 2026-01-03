@@ -446,7 +446,8 @@ h6 {
   color: #555555;
 }
 
-.rx-banner h4 {
+.rx-banner h4, 
+.rx-banner h1 {
   font-family: "superior-title", serif;
   font-size: 35px;
   color: #000;
@@ -1162,8 +1163,8 @@ input::placeholder,
   }
 
   .rx-banner p {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .rx-banner h4 {
@@ -1190,8 +1191,14 @@ input::placeholder,
     margin-bottom: 12px;
   }
 
+  .rx-about-inner-box .rx-575-50 {
+    width: 33%;
+  }
   .rx-575-50 {
     width: 100%;
+  }
+  .section-services .rx-575-50 {
+    width: 50%;
   }
 }
 
@@ -1313,7 +1320,7 @@ header .header-fixed {
 }
 
 .rx-inner-menu-desk .navbar-toggler i {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 500;
   color: #fff;
 }
@@ -1491,7 +1498,7 @@ header .header-fixed {
   top: 0;
   right: auto;
   left: 0;
-  background-color: #fff;
+  /* background-color: #fff; */
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
   display: -webkit-box;
@@ -1503,6 +1510,10 @@ header .header-fixed {
   flex-direction: column;
   z-index: 17;
   overflow: auto;
+
+  background: linear-gradient(to top right, #410f06, #410f06, #aa833f);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .rx-mobile-menu::-webkit-scrollbar {
@@ -1543,14 +1554,14 @@ header .header-fixed {
   -ms-flex-align: center;
   align-items: center;
   font-size: 16px;
-  color: #000;
+  color: #ffffff;
   font-weight: 600;
 }
 
 .rx-mobile-menu .rx-menu-title .rx-close-menu {
   position: relative;
   border: 0;
-  font-size: 30px;
+  font-size: 40px;
   line-height: 1;
   color: #ff0000;
   background-color: transparent;
@@ -1563,10 +1574,10 @@ header .header-fixed {
 
 .rx-mobile-menu .rx-menu-inner .rx-menu-contact ul li a {
   margin-bottom: 12px;
-  padding: 12px 12px;
+  padding: 10px 12px;
   display: block;
   text-transform: capitalize;
-  color: #555555;
+  color: #fff;
   border: 1px solid #eee;
   border-radius: 10px;
   font-size: 15px;
@@ -1660,7 +1671,7 @@ header .header-fixed {
   flex-direction: row;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .rx-mobile-menu .rx-menu-inner .header-res-social ul li {
@@ -1739,8 +1750,8 @@ header .header-fixed {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     border-radius: 5px;
   }
 }
@@ -3402,8 +3413,8 @@ footer {
   }
 
   .rx-menu-tabs-contact .inner-menu .sub-contact p {
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 26px;
   }
 }
 
@@ -3461,7 +3472,8 @@ footer {
   }
 
   .rx-menu-tabs-contact .inner-menu .sub-contact h5 {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 26px;
   }
 }
 
@@ -3724,13 +3736,13 @@ footer {
   }
 
   .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box p {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width: 1199px) {
   .rx-about-contact .inner-contact p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .rx-about-contact .inner-contact .rx-about-inner-box {
@@ -3739,7 +3751,7 @@ footer {
 
   .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box h5 {
     margin-bottom: 8px;
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box p {
@@ -3891,13 +3903,13 @@ footer {
   }
 
   .rx-services .services-contact ul li {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width: 575px) {
   .rx-services {
-    padding: 20px;
+    padding: 10px;
   }
 }
 
@@ -4026,7 +4038,7 @@ footer {
   padding: 8px 18px;
   background-color: #131618;
   line-height: 20px;
-  font-size: 15px;
+  font-size: 16px;
   color: #fff;
 }
 
@@ -4256,6 +4268,7 @@ footer {
 
   .rx-rooms-box-2 .inner-back-side .inner-info ul li {
     font-size: 16px;
+    color: #fff;
   }
 }
 
@@ -4871,11 +4884,18 @@ footer {
 }
 
 @media screen and (max-width: 991px) {
+  .accomndation-section .rx-banner h4{
+    line-height: 1.2;
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 1.14%, rgb(255, 255, 255) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .rx-amenities-img img {
-    border-top-left-radius: 500px;
-    border-top-right-radius: 500px;
-    border-bottom-left-radius: 500px;
-    border-bottom-right-radius: 500px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   .rx-amenities-slider .owl-dots {
@@ -4906,6 +4926,7 @@ footer {
 
   .rx-amenities-contact .inner-banner h4 {
     font-size: 32px;
+    line-height: 35px;
   }
 }
 
@@ -6079,7 +6100,7 @@ figure {
 #book-room .container input[type=submit] {
     box-sizing: border-box;
     color: #000;
-    height: 30px;
+    height: 35px;
     font-size: 16px;
 }
 #book-room .form-control:focus{
@@ -6330,7 +6351,7 @@ figure {
 
 .rating-label {
   font-weight: bold;
-  color: #333;
+  color: #555555;
 }
 
 .rating-bar-score {
@@ -6745,6 +6766,9 @@ figure {
     -o-animation: imageanime 0.85s;
     animation: imageanime 0.85s;
 }
+.contact-us-card a{
+  color: #555555;
+}
 @keyframes imageanime {
     100% {
         left: 125%;
@@ -6766,5 +6790,132 @@ figure {
   header .rx-header {
     padding: 8px 0;
   }
+  .rx-inner-menu-desk .navbar-toggler{
+    border: 1px solid #410f06;
+    margin-top: 7px;
+  }
+  .rx-inner-menu-desk .navbar-toggler i{
+    color: #410f06;
+  }
+  .section-hero{
+    margin-top: -30px;
+  }
+  #book-room{
+    transform: translateY(0%);
+  }
+  .book-now-widget#book-room .container{
+    width: 98%;
+  }
+  #book-room .container.desktop{
+    display: block;
+  }
+  #book-room .container > div{
+    width: 100%;
+    text-align: unset;
+    border-right: none;
+    padding: 10px 20px;
+  }
+  header .header-fixed{
+    padding: 10px 0 !important;
+  }
+  .header-fixed .rx-inner-menu-desk .rx-header-btn img{
+    width: 60px;
+    padding: 0px;
+  }
+  .header-fixed .rx-inner-menu-desk .navbar-toggler {
+    border: 1px solid #ffffff;
+    margin-top: 10px;
+  }
+  .header-fixed .rx-inner-menu-desk .navbar-toggler i {
+    color: #ffffff;
+  }
+  .rx-rounded-circle .inner-contact{
+    top: 31px;
+    left: 48px;
+  }
+  .rx-banner h1 {
+    font-size: 27px;
+  }
+  .rx-services {
+    padding: 10px;
+    height: 100%;
+  }
+  .rx-services .services-contact ul li {
+    font-size: 16px;
+  }
+  .acco-logo-area{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .rx-amenities-contact .inner-banner h4 {
+    font-size: 32px;
+    line-height: 35px;
+  }
+  .rx-rooms-box-2 .inner-back-side{
+    bottom: 0;
+  }
+  .fact-card{
+    padding: 10px 0 10px 0;
+  }
+  .near-by-title h5,
+  .near-by-title h5 span{
+    font-size: 25px;
+  }
+  .feature-four.other-hotel-section{
+    padding: 45px 0px;
+  }
+  .rx-social-media .rx-logo img {
+    width: 125px;
+  }
+  .mobile-flex{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .rx-social-media .inner-contact,
+  .rx-social-media .rx-logo{
+    margin-bottom: 25px;
+  }
+  .footer-widget--links,
+  .footer-widget--contact{
+    padding-left: 7px;
+    padding-top: 3px;
+    text-align: center;
+  }
+  .rx-footer-items .rx-items-heading::after{
+    right: 0;
+    margin: auto;
+  }
+  .rx-footer-items .rx-items-contact ul li::after{
+    display: none;
+  }
+  .footer-widget--about::after,
+  .footer-widget--links::after {
+    display: none;
+  }
+  .section-breadcrumb{
+    margin-top: -30px;
+  }
+  .services-left-content{
+    margin-bottom: 15px;
+  }
+  .services-section-2 .services-item .services-image{
+    width: 40%;
+  }
+  .services-section-2 .services-item .services-content{
+    width: 100%;
+  }
+  .services-section-2 .services-item .services-image a figure{
+    border-radius: 10px;
+  }
+  .gallery-masonry-container .gallery-button {
+      display: flex;
+      gap: 0px;
+      white-space: nowrap;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+  }
+  
 }
-

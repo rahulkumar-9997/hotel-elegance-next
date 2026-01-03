@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 export default function RestaurantPage() {
     useEffect(() => {
         AOS.init({
@@ -23,25 +24,11 @@ export default function RestaurantPage() {
     return (
         <>
             {/* Breadcrumb */}
-            <section className="section-breadcrumb">
-                <div className="rx-breadcrumb-image">
-                    <div className="rx-breadcrumb-overlay" />
-                    <div className="inner-breadcrumb-contact sub_header_content">
-                        <div className="main-breadcrumb-contact">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="rx-banner-contact">
-                                            <h1>Restaurant</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </section>
+            <Breadcrumb 
+                title="Restaurant" 
+                backgroundImage="/assets/dev-img/bread-banner/Restaurants.jpg"
+                subtitle=""
+            />
             {/* Menu */}
             <section className="section-menu padding-t-100 padding-b-50">
                 <div className="container">

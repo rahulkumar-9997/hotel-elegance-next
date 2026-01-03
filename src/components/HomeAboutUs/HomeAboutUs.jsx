@@ -59,9 +59,9 @@ export const HomeAboutUs = () => {
             <div className="rx-about-contact">
               <div className="rx-banner">
                 <p>The Elegance</p>
-                <h4>
+                <h1 className="home-about">
                   Best Hotel in Varanasi near <span>Railway Station</span>
-                </h4>
+                </h1>
               </div>
               <div className="inner-contact">
                 <p>

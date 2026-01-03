@@ -10,15 +10,17 @@ const Footer = () => {
                         <div className="row mb-minus-24">
                             <div className="col-md-6 col-lg-4 col-xl-5 wow fadeInUp animated footer-order-1">
                                 <div className="rx-social-media footer-widget--about">
-                                    <div className="rx-logo">
-                                        <img src="assets/dev-img/logo/logo-bg.jpg" alt="logo" />
-                                    </div>
-                                    <div className="inner-contact">
-                                        <p>
-                                            Our hotel seamlessly blends timeless charm with modern
-                                            amenities, <br />
-                                            offering an unparalleled experience for travelers.
-                                        </p>
+                                    <div className="mobile-flex">
+                                        <div className="rx-logo">
+                                            <img src="assets/dev-img/logo/logo-bg.jpg" alt="logo" />
+                                        </div>
+                                        <div className="inner-contact">
+                                            <p>
+                                                Our hotel seamlessly blends timeless charm with modern
+                                                amenities, <br />
+                                                offering an unparalleled experience for travelers.
+                                            </p>
+                                        </div>
                                     </div>
                                     <div className="rx-footer-inner-contact social-icon">
                                         <div className="rx-footer-last-logo">

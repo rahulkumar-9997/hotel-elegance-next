@@ -75,7 +75,7 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
 
     return (
         <section className="section-testimonials padding-tb-50 testimonials-first">
-            <div className="overlay-welcome" />
+            {/* <div className="overlay-welcome" /> */}
             <div className="container">
                 <div className="row justify-content-md-center">
                     <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
@@ -162,7 +162,7 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
                         </Carousel>
                     </div>
                     <div
-                        className="col-xl-12 col-lg-12 col-sm-12 mb-24 spa-d-none"
+                        className="col-md-12 mb-3 mt-2 text-center"
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-delay="600"
@@ -171,7 +171,7 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
                             <a
                                 href="https://www.tripadvisor.in/Hotel_Review-g297685-d23708537-Reviews-The_Elegance_Hotel-Varanasi_Varanasi_District_Uttar_Pradesh.html#REVIEWS"
                                 target="_blank"
-                                className="btn rx-btn-two"
+                                className="btn rx-btn-two rounded"
                             >
                                 View More Reviews On Trip Advisor
                             </a>

@@ -102,11 +102,10 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
 
                     {initialNearByPlace.length > 3 && (
                         <div
-                            className="col-xl-12 col-lg-12 col-sm-12 mb-24 spa-d-none"
-                            {...getAOSProps(600)}
+                            className="col-md-12 mb-2"
                         >
                             <div className="text-center">
-                                <Link href="/near-by-place" className="btn rx-btn-two">
+                                <Link href="/near-by-place" className="btn rx-btn-two rounded">
                                     View More Places in Varanasi
                                 </Link>
                             </div>
