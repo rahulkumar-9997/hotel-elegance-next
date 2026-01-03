@@ -6854,6 +6854,9 @@ figure {
   }
   .rx-rooms-box-2 .inner-back-side{
     bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
   }
   .fact-card{
     padding: 10px 0 10px 0;
