@@ -56,6 +56,7 @@ const Loading = ({
                                     <div className="col-12">
                                         <div className="rx-banner-contact">
                                             
+                                            
                                         </div>
                                     </div>
                                 </div>
