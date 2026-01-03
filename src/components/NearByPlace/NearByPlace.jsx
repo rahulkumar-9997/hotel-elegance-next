@@ -52,7 +52,6 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                 <div className="row mb-minus-24">
                     <div
                         className="col-12"
-                        {...getAOSProps()}
                     >
                         <div className="rx-banner text-center rx-banner-effects">
                             <p>
@@ -84,7 +83,6 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                         <div
                             key={place.id}
                             className="col-xl-3 col-lg-4 col-sm-6 mb-24"
-                            {...getAOSProps(index * 200)}
                         >
                             <div className="rx-spa-card">
                                 <Link href={`/near-by-place/${place.slug}`}>
