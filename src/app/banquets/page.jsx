@@ -17,6 +17,7 @@ async function getOnexBanquetData() {
         return null;
     }
 }
+
 async function getSapphireBanquetData() {
     try {
         const res = await fetch(
@@ -71,7 +72,7 @@ export default async function BanquetsPage() {
             
             {/* Pass fetched data as props */}
             <OnexBanquet onexData={onexData} />
-            {/* <SapphireBanquet sapphireData={sapphireData} /> */}
+            <SapphireBanquet sapphireData={sapphireData} />
         </>
     );
 }
