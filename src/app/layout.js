@@ -1,6 +1,7 @@
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
+import { ToastDisplay } from '@/components/ui/toast';
 export const metadata = {
   title: "The Elegance Best Hotel in Varanasi near Railway Station",
   description:
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
         <div className="page-wraper">
           <Header />
           {children}
+           <ToastDisplay />
           <Footer />
         </div>
         <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script>

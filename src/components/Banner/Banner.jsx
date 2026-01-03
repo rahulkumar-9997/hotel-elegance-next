@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
-
+import { toast } from "@/components/ui/toast";
 export default function Banner({ initialVideo }) {
     const [open, setOpen] = useState(false);
     const [openSecond, setOpenSecond] = useState(false);
@@ -18,22 +18,67 @@ export default function Banner({ initialVideo }) {
     const [isLoading, setIsLoading] = useState(false);
     const [videoLoading, setVideoLoading] = useState(true);
     const [videoError, setVideoError] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const handleSubmit = (e) => {
+    const API_URL = 'https://www.inforbit.in/demo/hotel-elegance-backend/api/home-enquiry';
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-
-        console.log({
-            arrivalDate,
-            departureDate,
-            adults,
-            phoneNumber
-        });
-
-        setTimeout(() => {
+        if (!arrivalDate || !departureDate) {
+            toast.error('Please select both arrival and departure dates');
             setIsLoading(false);
-            alert("Booking request submitted!");
-        }, 1000);
+            return;
+        }
+        const phoneRegex = /^[0-9]{8,15}$/;
+        if (!phoneRegex.test(phoneNumber)) {
+            toast.error('Please enter a valid phone number (8-15 digits)');
+            setIsLoading(false);
+            return;
+        }
+        if (departureDate <= arrivalDate) {
+            toast.error('Departure date must be after arrival date');
+            setIsLoading(false);
+            return;
+        }
+        const formData = {
+            arrival: format(arrivalDate, 'yyyy-MM-dd'),
+            departure: format(departureDate, 'yyyy-MM-dd'),
+            adult: adults,
+            phone: phoneNumber
+        };
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            const data = await response.json();
+            if (response.ok && data.status) {
+                toast.success(data.message || 'Enquiry submitted successfully! We will contact you soon.');
+                setIsSubmitted(true);
+                setTimeout(() => {
+                    resetForm();
+                }, 3000);
+            } else {
+                toast.error(data.message || 'Failed to submit enquiry. Please try again.');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            toast.error('Network error. Please check your connection and try again.');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+    const resetForm = () => {
+        setArrivalDate();
+        setDepartureDate();
+        setAdults(1);
+        setPhoneNumber("");
+        setIsSubmitted(false);
     };
     useEffect(() => {
         if (initialVideo) {
@@ -50,7 +95,6 @@ export default function Banner({ initialVideo }) {
             setVideoError(true);
         }
     }, [initialVideo]);
-
     return (
         <section className="section-hero margin-b-0">
             <div className="container-fulid">
@@ -149,6 +193,7 @@ export default function Banner({ initialVideo }) {
                                                 !arrivalDate && "text-muted-foreground"
                                             )}
                                             id="arrival"
+                                            disabled={isSubmitted}
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
                                             {arrivalDate ? format(arrivalDate, "PPP") : "Pick a date"}
@@ -160,8 +205,8 @@ export default function Banner({ initialVideo }) {
                                             mode="single"
                                             selected={arrivalDate}
                                             captionLayout="dropdown"
-                                            onSelect={(arrivalDate) => {
-                                                setArrivalDate(arrivalDate)
+                                            onSelect={(date) => {
+                                                setArrivalDate(date)
                                                 setOpen(false)
                                             }}
                                             initialFocus
@@ -185,7 +230,7 @@ export default function Banner({ initialVideo }) {
                                                 !departureDate && "text-muted-foreground"
                                             )}
                                             id="departure"
-                                            disabled={!arrivalDate}
+                                            disabled={!arrivalDate || isSubmitted}
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
                                             {departureDate ? format(departureDate, "PPP") : "Pick a date"}
@@ -195,15 +240,15 @@ export default function Banner({ initialVideo }) {
                                         <Calendar
                                             mode="single"
                                             selected={departureDate}
-                                            onSelect={(departureDate) => {
-                                                setDepartureDate(departureDate)
+                                            onSelect={(date) => {
+                                                setDepartureDate(date)
                                                 setOpenSecond(false)
                                             }}
                                             captionLayout="dropdown"
                                             initialFocus
                                             disabled={(date) => {
                                                 if (arrivalDate) {
-                                                    return date < arrivalDate || date < new Date();
+                                                    return date <= arrivalDate || date < new Date();
                                                 }
                                                 return date < new Date();
                                             }}
@@ -223,6 +268,7 @@ export default function Banner({ initialVideo }) {
                                     id="guests"
                                     value={adults}
                                     onChange={(e) => setAdults(Number(e.target.value))}
+                                    disabled={isSubmitted}
                                 >
                                     {[1, 2, 3, 4, 5].map((num) => (
                                         <option key={num} value={num}>
@@ -244,10 +290,12 @@ export default function Banner({ initialVideo }) {
                                     name="phone_number"
                                     placeholder="Enter Phone No."
                                     value={phoneNumber}
-                                    onChange={(e) => setPhoneNumber(e.target.value)}
+                                    onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
                                     required
-                                    pattern="[0-9]{10}"
-                                    maxLength={10}
+                                    pattern="[0-9]{8,15}"
+                                    maxLength={15}
+                                    minLength={8}
+                                    disabled={isSubmitted}
                                 />
                             </div>
 
@@ -256,9 +304,12 @@ export default function Banner({ initialVideo }) {
                                 <Button
                                     variant='default'
                                     type="submit"
-                                    className="w-full rounded bg-[#410f06] text-white font-semibold rounded transition-all duration-300 flex items-center justify-center hover:bg-gray-100 hover:shadow-lg transform hover:-translate-y-0.5"
+                                    className={`w-full rounded font-semibold rounded transition-all duration-300 flex items-center justify-center transform hover:-translate-y-0.5 ${isSubmitted
+                                        ? 'bg-gray-300 cursor-not-allowed'
+                                        : 'bg-[#410f06] text-white hover:bg-[#310b04] hover:shadow-lg'
+                                        }`}
                                     id="check-availability"
-                                    disabled={isLoading || !arrivalDate || !departureDate || !phoneNumber}
+                                    disabled={isLoading || !arrivalDate || !departureDate || !phoneNumber || isSubmitted}
                                 >
                                     {isLoading ? (
                                         <span className="flex items-center gap-2">
@@ -268,6 +319,8 @@ export default function Banner({ initialVideo }) {
                                             </svg>
                                             Processing...
                                         </span>
+                                    ) : isSubmitted ? (
+                                        "Submitted"
                                     ) : (
                                         "Book Now"
                                     )}
