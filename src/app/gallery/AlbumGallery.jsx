@@ -88,10 +88,10 @@ export default function AlbumGallery({ initialData, currentAlbumId }) {
                                             key={album.id}
                                             onClick={() => handleAlbumClick(album.id)}
                                             disabled={loadingAlbum === album.id || album.is_active}
-                                            className={`rounded px-3 py-2.5 text-sm font-semibold transition-all ${
+                                            className={`rounded px-3 py-2.5 text-base! font-semibold transition-all ${
                                                 album.is_active 
-                                                    ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/30 scale-105' 
-                                                    :'rounded px-6 py-2.5 text-sm font-semibold bg-gradient-to-r bg-amber-900 text-white shadow-lg shadow-pink-500/30 scale-105 transition-all'
+                                                    ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white' 
+                                                    :'rounded px-6 py-2.5 text-sm font-semibold bg-gradient-to-r bg-amber-900 text-white '
                                             } ${loadingAlbum === album.id ? 'opacity-50 cursor-not-allowed' : ''}`}
                                         >
                                             {loadingAlbum === album.id ? (

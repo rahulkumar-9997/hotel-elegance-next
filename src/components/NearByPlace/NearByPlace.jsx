@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
@@ -7,33 +7,29 @@ import Link from 'next/link';
 import Image from 'next/image';
 export const NearByPlace = ({ initialNearByPlace = [] }) => {
     const [isAOSInitialized, setIsAOSInitialized] = useState(false);
-    const [isClient, setIsClient] = useState(false);
+    const hasConvertedSvg = useRef(false);
 
     useEffect(() => {
-        setIsClient(true);
         AOS.init({
             duration: 1000,
             once: true,
             offset: 100,
-            disable: !isClient,
         });
         setIsAOSInitialized(true);
         const handleSVGConversion = () => {
-            if (typeof window !== 'undefined') {
-                setTimeout(() => {
-                    imageTosvg();
-                }, 100);
+            if (!hasConvertedSvg.current) {
+                imageTosvg();
+                hasConvertedSvg.current = true;
             }
         };
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', handleSVGConversion);
-        } else {
+        requestAnimationFrame(() => {
             handleSVGConversion();
-        }
+        });
         return () => {
-            document.removeEventListener('DOMContentLoaded', handleSVGConversion);
+            AOS.refresh();
         };
-    }, [isClient]);
+    }, []);
+
     const getAOSProps = (delay = null) => {
         if (!isAOSInitialized) return {};
         const props = {
@@ -45,6 +41,11 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
         }
         return props;
     };
+    const [showSvgImages, setShowSvgImages] = useState(false);
+
+    useEffect(() => {
+        setShowSvgImages(true);
+    }, []);
     return (
         <section className="section-spa padding-tb-50 near-by-place">
             <div className="container">
@@ -55,16 +56,22 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                     >
                         <div className="rx-banner text-center rx-banner-effects">
                             <p>
-                                <img
-                                    src="assets/img/banner/left-shape.svg"
+                                <Image
+                                    src="/assets/img/banner/left-shape.svg"
                                     alt="banner-left-shape"
                                     className="svg-img left-side"
+                                    width={80}
+                                    height={16}
+                                    priority
                                 />
                                 Nearby Places
-                                <img
-                                    src="assets/img/banner/right-shape.svg"
+                                <Image
+                                    src="/assets/img/banner/right-shape.svg"
                                     alt="banner-right-shape"
                                     className="svg-img right-side"
+                                    width={80}
+                                    height={16}
+                                    priority
                                 />
                             </p>
                             <h4>
@@ -86,9 +93,9 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                                             src={place.image_url}
                                             alt={place.title}
                                             className="w-full object-cover"
-                                           width={200}
-                                           height={200}
-                                           sizes='300'
+                                            width={200}
+                                            height={200}
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                         />
                                     </div>
                                     <div className="spa-contact p-4">
@@ -101,9 +108,7 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                     ))}
 
                     {initialNearByPlace.length > 3 && (
-                        <div
-                            className="col-md-12 mb-2"
-                        >
+                        <div className="col-md-12 mb-2">
                             <div className="text-center">
                                 <Link href="/near-by-place" className="btn rx-btn-two rounded">
                                     View More Places in Varanasi
