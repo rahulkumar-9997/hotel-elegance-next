@@ -2,6 +2,7 @@ import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import { ToastDisplay } from '@/components/ui/toast';
+import Script from "next/script";
 export const metadata = {
   title: "The Elegance Best Hotel in Varanasi near Railway Station",
   description:
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css" />
         <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css" /> */}
         {/* Main Style */}
-        <link rel="stylesheet" href="/assets/css/style.css?v=1.0.0" />
+        <link rel="stylesheet" href="/assets/css/style.css?v=1.0.0" />        
       </head>
       <body>
         <div className="page-wraper">
@@ -49,6 +50,19 @@ export default function RootLayout({ children }) {
         <script src="assets/js/vendor/owl.carousel.min.js"></script>
         <script src="assets/js/vendor/swiper-bundle.min.js"></script>
         <script src="assets/js/main.js"></script> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZNW7VCL3YL"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZNW7VCL3YL');
+          `}
+        </Script>
       </body>
     </html>
   );

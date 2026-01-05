@@ -27,8 +27,8 @@ export async function generateMetadata({ searchParams }) {
 
         if (!data?.status) {
             return {
-                title: 'Gallery - Hotel Elegance',
-                description: 'Explore our gallery showcasing Hotel Elegance amenities, rooms, and facilities',
+                title: 'Inside The Elegance Varanasi | Hotel, Rooms & Events',
+                description: 'Take a visual tour of The Elegance Varanasi. View hotel rooms, restaurant, banquet halls, and event spaces that define comfort and style.',
             };
         }
 
@@ -38,8 +38,8 @@ export async function generateMetadata({ searchParams }) {
         };
     } catch (error) {
         return {
-            title: 'Gallery - Hotel Elegance',
-            description: 'Photo gallery of Hotel Elegance Varanasi',
+            title: 'Inside The Elegance Varanasi | Hotel, Rooms & Events',
+            description: 'Take a visual tour of The Elegance Varanasi. View hotel rooms, restaurant, banquet halls, and event spaces that define comfort and style.',
         };
     }
 }

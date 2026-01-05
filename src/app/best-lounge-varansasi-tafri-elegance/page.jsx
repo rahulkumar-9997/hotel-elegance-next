@@ -20,22 +20,14 @@ async function getTafriLoungeImages() {
 export async function generateMetadata() {
     try {
         const data = await getTafriLoungeImages();
-
-        if (!data?.status) {
-            return {
-                title: 'Tafri Lounge - Hotel Elegance',
-                description: 'Best lounge in Varanasi near BHU for chilling and relaxation',
-            };
-        }
-
         return {
-            title: 'Tafri Lounge by Elegance - Best Lounge in Varanasi',
-            description: 'Experience the best lounge in Varanasi near BHU. Tafri Lounge by Hotel Elegance offers vibrant atmosphere, music, and drinks.',
+            title: 'Best Lounge in Varanasi for Food, Drinks & Vibes',
+            description: 'Unwind at one of the best lounges in Varanasi. Enjoy great food, refreshing drinks, and a lively ambience at Tafri – The Elegance Lounge.',
         };
     } catch (error) {
         return {
-            title: 'Tafri Lounge - Hotel Elegance',
-            description: 'Premium lounge experience in Varanasi',
+            title: 'Best Lounge in Varanasi for Food, Drinks & Vibes',
+            description: 'Unwind at one of the best lounges in Varanasi. Enjoy great food, refreshing drinks, and a lively ambience at Tafri – The Elegance Lounge.',
         };
     }
 }

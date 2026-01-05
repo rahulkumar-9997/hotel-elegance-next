@@ -39,15 +39,10 @@ export async function generateMetadata() {
         
         if (!onexData?.status) {
             return {
-                title: 'Banquets - Hotel Elegance',
-                description: 'Explore our premium banquet halls for your special events',
+                title: 'Best Budget Banquet in Varanasi for Weddings & Events',
+                description: 'Planning an event in Varanasi? Book a spacious, elegant banquet at budget-friendly prices. Ideal for weddings, parties, and celebrations.',
             };
         }
-        
-        return {
-            title: `${onexData.data.title} - Hotel Elegance Banquets`,
-            description: 'Best banquet halls in Varanasi for weddings, parties, and corporate events',
-        };
     } catch (error) {
         return {
             title: 'Banquets - Hotel Elegance',

@@ -99,10 +99,7 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
                         </div>
                     </div>
                     <div
-                        className="col-12 col-lg-8"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="200"
+                        className="col-12 col-lg-8"                        
                     >
                         <Carousel
                             className="w-full"
@@ -163,9 +160,6 @@ export const Testimonials = ({ initialTestimonials = [] }) => {
                     </div>
                     <div
                         className="col-md-12 mb-3 mt-2 text-center"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="600"
                     >
                         <div className="text-center">
                             <a

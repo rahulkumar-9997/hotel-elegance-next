@@ -19,21 +19,15 @@ async function getFacilitiesData() {
 
 export async function generateMetadata() {
     try {
-        const data = await getFacilitiesData();
-        if (!data?.status) {
-            return {
-                title: 'Facilities - Hotel Elegance',
-                description: 'Explore the premium facilities and amenities at Hotel Elegance, the best boutique hotel in Varanasi',
-            };
-        }
+        const data = await getFacilitiesData();       
         return {
-            title: 'Facilities & Amenities - Hotel Elegance Varanasi',
-            description: `Discover ${data.data.total_facilities} premium facilities including vegetarian restaurant, 24x7 services, free Wi-Fi, and more at Hotel Elegance Varanasi`,
+            title: 'Hotel Facilities at The Elegance Varanasi | Comfort Assured',
+            description: `Explore modern hotel facilities at The Elegance Varanasi. From comfort to convenience, everything is designed for a relaxing stay and events.`,
         };
     } catch (error) {
         return {
-            title: 'Facilities - Hotel Elegance',
-            description: 'Premium facilities and amenities at Hotel Elegance Varanasi',
+            title: 'Hotel Facilities at The Elegance Varanasi | Comfort Assured',
+            description: `Explore modern hotel facilities at The Elegance Varanasi. From comfort to convenience, everything is designed for a relaxing stay and events.`,
         };
     }
 }

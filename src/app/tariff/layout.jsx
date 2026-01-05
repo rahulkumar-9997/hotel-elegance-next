@@ -1,7 +1,7 @@
 import { pageMeta } from "@/utils/metadata";
 export const metadata = pageMeta(
-  "Best tariff Rooms in Varanasi", 
-  "Are you planning a trip to Varanasi, India's heart of spirit? We'll guide you to the best spots to stay."
+  "Hotel Room Tariff in Varanasi | Best Prices at Elegance", 
+  "Check hotel room tariffs in Varanasi at The Elegance. Affordable pricing, premium comfort, and great value for business and leisure stays."
 );
 
 export default function TariffLayout({ children }) {

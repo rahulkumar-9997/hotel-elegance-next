@@ -1,7 +1,7 @@
 import { pageMeta } from "@/utils/metadata";
 export const metadata = pageMeta(
-  "Best Hotel in Varanasi for Accommodation | The Elegance", 
-  "Hotel Elegance in Varanasi provides you best Accommodation with their exclusive Rooms at best budget rates. They Suit Rooms, Premium Rooms, King Size Rooms also."
+  "Comfortable Hotel Rooms in Varanasi at Best Prices | Elegance", 
+  "Looking for comfortable hotel rooms in Varanasi? Enjoy modern amenities, peaceful stays, and great value at The Elegance. Book your stay today."
 );
 
 export default function RoomsLayout({ children }) {
