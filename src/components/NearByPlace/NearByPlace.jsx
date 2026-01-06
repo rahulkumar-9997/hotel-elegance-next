@@ -55,22 +55,16 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                     >
                         <div className="rx-banner text-center rx-banner-effects">
                             <p>
-                                <Image
+                                <img
                                     src="/assets/img/banner/left-shape.svg"
                                     alt="banner-left-shape"
                                     className="svg-img left-side"
-                                    width={80}
-                                    height={16}
-                                    priority
                                 />
                                 Nearby Places
-                                <Image
+                                <img
                                     src="/assets/img/banner/right-shape.svg"
                                     alt="banner-right-shape"
                                     className="svg-img right-side"
-                                    width={80}
-                                    height={16}
-                                    priority
                                 />
                             </p>
                             <h4>
