@@ -1,5 +1,6 @@
 import React from 'react';
-import Link from 'next/link';    
+import Link from 'next/link';  
+import FooterPhoneNumbers from './FooterPhoneNumbers/FooterPhoneNumbers';  
 const Footer = () => {
     return (
         <>
@@ -102,9 +103,7 @@ const Footer = () => {
                                     </div>
                                     <div className="inner-info">
                                         <h5>Phone No</h5>
-                                        <a href="tel:918810719088">+91 88107 19088</a>
-                                        <br />
-                                        <a href="tel:9187568 82728">+91 87568 82728</a>
+                                         <FooterPhoneNumbers/>
                                     </div>
                                 </div>
                             </div>
