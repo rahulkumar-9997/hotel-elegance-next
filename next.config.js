@@ -22,6 +22,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/tarriff.php",
+        destination: "/tariff",
+        permanent: true,
+      },
+      {
         source: "/:slug*.php",
         destination: "/:slug*",
         permanent: true,
