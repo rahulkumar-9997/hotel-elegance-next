@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import AOS from 'aos';
 import Image from 'next/image';
 import 'aos/dist/aos.css';
@@ -13,35 +13,51 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+
 const OnexBanquet = ({ onexData }) => {
     const [isLoading, setIsLoading] = useState(!onexData);
     const [banquetData, setBanquetData] = useState(onexData?.data || null);
+    const fancyboxInitialized = useRef(false);
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
             once: true,
             offset: 100,
         });
-        Fancybox.bind("[data-fancybox='gallery-onex']", {
-            Thumbs: {
-                autoStart: true,
-            },
-            Toolbar: {
-                display: {
-                    left: ["infobar"],
-                    middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
-                    right: ["slideshow", "download", "thumbs", "close"],
+
+        // Initialize Fancybox only once
+        if (!fancyboxInitialized.current) {
+            Fancybox.bind("[data-fancybox='gallery-onex']", {
+                Thumbs: {
+                    autoStart: true,
                 },
-            },
-            Images: {
-                zoom: true,
-                zoomOpacity: "auto",
-                click: "close",
-                wheel: "slide",
-            },
-        });
+                Toolbar: {
+                    display: {
+                        left: ["infobar"],
+                        middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
+                        right: ["slideshow", "download", "thumbs", "close"],
+                    },
+                },
+                Images: {
+                    zoom: true,
+                    zoomOpacity: "auto",
+                    click: "close",
+                    wheel: "slide",
+                },
+                on: {
+                    init: () => {
+                        console.log("Fancybox initialized");
+                    },
+                },
+            });
+            fancyboxInitialized.current = true;
+        }
+
         return () => {
-            Fancybox.destroy();
+            // Don't destroy on every render, only on unmount
+            Fancybox.unbind("[data-fancybox='gallery-onex']");
+            Fancybox.close();
         };
     }, []);
 
@@ -51,11 +67,38 @@ const OnexBanquet = ({ onexData }) => {
             setIsLoading(false);
         }
     }, [onexData]);
+    useEffect(() => {
+        if (banquetData?.images && fancyboxInitialized.current) {
+            setTimeout(() => {
+                Fancybox.unbind("[data-fancybox='gallery-onex']");
+                Fancybox.bind("[data-fancybox='gallery-onex']", {
+                    Thumbs: {
+                        autoStart: true,
+                    },
+                    Toolbar: {
+                        display: {
+                            left: ["infobar"],
+                            middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
+                            right: ["slideshow", "download", "thumbs", "close"],
+                        },
+                    },
+                    Images: {
+                        zoom: true,
+                        zoomOpacity: "auto",
+                        click: "close",
+                        wheel: "slide",
+                    },
+                });
+            }, 100);
+        }
+    }, [banquetData]);
+
     const galleryImages = banquetData?.images?.map((img, index) => ({
         id: img.id || index + 1,
         src: img.image_url,
         alt: `onex-banquet-${index + 1}`
-    }));
+    })) || [];
+
     if (isLoading) {
         return (
             <section className="section-gallery padding-tb-50 banquate">
@@ -70,6 +113,7 @@ const OnexBanquet = ({ onexData }) => {
             </section>
         );
     }
+
     return (
         <section className="section-gallery padding-tb-50 banquate">
             <div className="container">
@@ -103,6 +147,7 @@ const OnexBanquet = ({ onexData }) => {
                         </div>
                     </div>
                 </div>
+
                 <div className="row mb-minus-24">
                     <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
                         <div className="relative w-full">
@@ -113,7 +158,6 @@ const OnexBanquet = ({ onexData }) => {
                                     align: "start",
                                     skipSnaps: false,
                                     duration: 25,
-                                    slidesToScroll: 4,
                                 }}
                                 plugins={[
                                     Autoplay({
@@ -122,7 +166,7 @@ const OnexBanquet = ({ onexData }) => {
                                     }),
                                 ]}
                             >
-                                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center rounded" />
+                                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center" />
 
                                 <CarouselContent className="py-4 px-2 md:px-4">
                                     {galleryImages.map((image) => (
@@ -131,11 +175,21 @@ const OnexBanquet = ({ onexData }) => {
                                             className="pl-1 md:pl-1 basis-1/2 md:basis-1/3 lg:basis-1/4"
                                         >
                                             <div className="p-2">
-                                                <figure className="rx-gallery-card-two overflow-hidden rounded-lg group">
+                                                <div className="rx-gallery-card-two overflow-hidden rounded-lg group">
                                                     <a
-                                                        className="rx-gallery-img block overflow-hidden"
+                                                        className="rx-gallery-img block overflow-hidden relative"
                                                         href={image.src}
                                                         data-fancybox="gallery-onex"
+                                                        data-src={image.src}
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            Fancybox.show([{
+                                                                src: image.src,
+                                                                type: "image"
+                                                            }], {
+                                                                Thumbs: { autoStart: true },
+                                                            });
+                                                        }}
                                                     >
                                                         <Image
                                                             src={image.src}
@@ -144,20 +198,22 @@ const OnexBanquet = ({ onexData }) => {
                                                             width={350}
                                                             height={350}
                                                             sizes='300'
+                                                            loading="lazy"
                                                         />
                                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                                                     </a>
-                                                </figure>
+                                                </div>
                                             </div>
                                         </CarouselItem>
                                     ))}
                                 </CarouselContent>
 
-                                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center rounded" />
+                                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center" />
                             </Carousel>
                         </div>
                     </div>
                 </div>
+
                 <div className="row mb-minus-24 justify-content-md-center">
                     <div className="col-lg-12">
                         <div className="mt-3">
@@ -176,4 +232,5 @@ const OnexBanquet = ({ onexData }) => {
         </section>
     );
 };
+
 export default OnexBanquet;

@@ -561,21 +561,28 @@ h6 {
 }
 
 .inner-breadcrumb-contact .main-breadcrumb-contact {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
+    /* height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center; 
+    text-align: left;
+    padding-bottom: 100px;
 }
 
 .inner-breadcrumb-contact .main-breadcrumb-contact .rx-banner-contact h1 {
@@ -1159,7 +1166,7 @@ input::placeholder,
   }
 
   .inner-breadcrumb-contact .main-breadcrumb-contact .rx-banner-contact h1 {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .rx-banner p {

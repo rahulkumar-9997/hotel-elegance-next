@@ -59,7 +59,8 @@ export default function tariffPage() {
             {/* Breadcrumb */}
             <Breadcrumb 
                 title="Tariff" 
-                backgroundImage="/assets/img/banner/banner.jpg"
+                backgroundImage="/assets/dev-img/bread-banner/Tariff.jpg"
+                mobileBackgroundImage="/assets/dev-img/bread-banner/Tariff-mobile.jpg"
                 subtitle=""
             />
             <section className="section-menu padding-t-100 padding-b-20">
