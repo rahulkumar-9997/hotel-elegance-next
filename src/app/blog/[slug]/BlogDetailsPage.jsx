@@ -6,8 +6,8 @@ export default function BlogDetailsPage({ blog }) {
     return (
         <section className="section-blog-details padding-t-50 padding-b-100">
             <div className="container">
-                <div className="row mb-minus-24">
-                    <div className="col-lg-8 col-12 mb-24">
+                <div className="row de-flex justify-content-md-center mb-minus-24">
+                    <div className="col-md-10 col-12 mb-24">
                         <div className="rx-blog-details">
                             <div className="rx-blog-details-cart">
                                 {blog.featured_image && (
@@ -104,7 +104,7 @@ export default function BlogDetailsPage({ blog }) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 col-12 mb-24">
+                    {/* <div className="col-lg-4 col-12 mb-24">
                         <div className="rx-blog-details-sidebar">
                             <div className="rx-recent-post">
                                 <h5 className="sub-title">Recent Posts</h5>
@@ -164,7 +164,7 @@ export default function BlogDetailsPage({ blog }) {
                                 </div>
                             </div>                            
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
