@@ -62,7 +62,7 @@ export const HomeBlog = ({ initialBlogData }) => {
                         
                     ))}
                     <div className="col-md-12 mb-3 mt-2 text-center">
-                        <div class="text-center">
+                        <div className="text-center">
                             <Link href="/blog"  className="btn rx-btn-two rounded">View All Blogs</Link>
                         </div>
                     </div>
