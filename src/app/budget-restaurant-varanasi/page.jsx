@@ -27,6 +27,7 @@ export default function RestaurantPage() {
             <Breadcrumb 
                 title="Restaurant" 
                 backgroundImage="/assets/dev-img/bread-banner/Restaurants.jpg"
+                mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/resturant.jpg"
                 subtitle=""
             />
             {/* Menu */}

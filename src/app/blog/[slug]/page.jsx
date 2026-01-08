@@ -65,7 +65,7 @@ export default async function Page({ params }) {
                 title={blogRes.data.title}
                 backgroundImage="/assets/dev-img/bread-banner/Tariff.jpg"
                 mobileBackgroundImage=""
-                subtitle={blogRes.data.short_desc || ""}
+                subtitle=""
             />
 
             <BlogDetailsPage blog={blogRes.data} />

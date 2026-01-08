@@ -41,6 +41,7 @@ export default async function FacilitiesPage() {
             <Breadcrumb 
                 title="Facilities" 
                 backgroundImage="/assets/dev-img/bread-banner/Facilities.jpg"
+                mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Facilities.jpg"
                 subtitle=""
             />
             <section className="services-section-2 section-menu padding-t-50 padding-b-50">

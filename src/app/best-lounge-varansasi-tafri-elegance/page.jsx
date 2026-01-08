@@ -39,6 +39,7 @@ export default async function TafriLoungePage() {
             <Breadcrumb 
                 title="Tafri Lounge by Elegance" 
                 backgroundImage="/assets/dev-img/bread-banner/Taffri.jpg"
+                mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Tafri-Lounge.jpg"
                 subtitle=""
             />
             <section className="section-menu padding-t-50 padding-b-50">

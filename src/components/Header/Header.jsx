@@ -187,6 +187,11 @@ export const Header = () => {
                                                 Tariff
                                             </Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" href="/blog">
+                                                Blog
+                                            </Link>
+                                        </li>
                                     </ul>
                                     <div className="header-button">
                                         <a
@@ -261,6 +266,11 @@ export const Header = () => {
                             <li>
                                 <Link href="/tariff">
                                     Tariff
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/blog">
+                                    Blog
                                 </Link>
                             </li>
                             <li>

@@ -61,6 +61,7 @@ export default async function BanquetsPage() {
             <Breadcrumb 
                 title="Banquets" 
                 backgroundImage="/assets/dev-img/bread-banner/Banquet.jpg"
+                mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Banquets.jpg"
                 subtitle=""
             />
             

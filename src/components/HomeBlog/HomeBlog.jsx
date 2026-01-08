@@ -20,7 +20,7 @@ export const HomeBlog = ({ initialBlogData }) => {
         );
     }
     return (
-        <section className="section-spa padding-b-50 home-blog-section">
+        <section className="section-spa padding-b-50 home-blog-section pt-5">
             <div className="container">
                 <div className="row mb-minus-24">
                     <div className="col-12">
