@@ -166,7 +166,7 @@ const OnexBanquet = ({ onexData }) => {
                                     }),
                                 ]}
                             >
-                                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center" />
+                                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded flex items-center justify-center" />
 
                                 <CarouselContent className="py-4 px-2 md:px-4">
                                     {galleryImages.map((image) => (
@@ -208,7 +208,7 @@ const OnexBanquet = ({ onexData }) => {
                                     ))}
                                 </CarouselContent>
 
-                                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center" />
+                                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded flex items-center justify-center" />
                             </Carousel>
                         </div>
                     </div>

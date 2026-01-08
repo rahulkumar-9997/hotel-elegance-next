@@ -100,9 +100,9 @@ export const AccommodationDining = () => {
                                         className="svg-img right-side"
                                     />
                                 </p>
-                                <h4>
+                                <h3>
                                     Accommodation and <span style={{ color: "#fff" }}>Dining</span>
-                                </h4>
+                                </h3>
                             </div>
                         </div>
                         <div

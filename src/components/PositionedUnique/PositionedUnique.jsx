@@ -57,9 +57,9 @@ export const PositionedUnique = () => {
                                   <i class="ri-questionnaire-line"></i>
                               </div> */}
                                         <div>
-                                            <h1 className="heading h3 greyscale-0 mb-0 facts-title">
+                                            <h6 className="heading h3 greyscale-0 mb-0 facts-title">
                                                 <em className="italic-text">15 minutes</em>
-                                            </h1>
+                                            </h6>
                                             <div className="greyscale-0 facts-desc">
                                                 to Babatpur Airport
                                             </div>
@@ -70,9 +70,9 @@ export const PositionedUnique = () => {
                                   <i class="ri-questionnaire-line"></i>
                               </div> */}
                                         <div>
-                                            <h1 className="heading h3 greyscale-0 mb-0 facts-title">
+                                            <h6 className="heading h3 greyscale-0 mb-0 facts-title">
                                                 <em className="italic-text">5 minutes</em>
-                                            </h1>
+                                            </h6>
                                             <div className="greyscale-0 facts-desc">
                                                 to Cant Railway Station
                                             </div>
@@ -80,12 +80,12 @@ export const PositionedUnique = () => {
                                     </div>
                                     <div className="fact-card fact-card-full">
                                         {/* <div class="towndown-icon">
-                                  <i class="ri-questionnaire-line"></i>
-                              </div> */}
+                                            <i class="ri-questionnaire-line"></i>
+                                        </div> */}
                                         <div>
-                                            <h1 className="heading h3 greyscale-0 mb-0 facts-title">
+                                            <h6 className="heading h3 greyscale-0 mb-0 facts-title">
                                                 <em className="italic-text">21 minutes</em>
-                                            </h1>
+                                            </h6>
                                             <div className="greyscale-0 facts-desc">
                                                 to Kashi Vishwanath Temple
                                             </div>

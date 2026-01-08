@@ -1,4 +1,3 @@
-// app/sitemap.js
 export default async function sitemap() {
   const baseUrl = "https://www.theelegance.co.in";
   const staticPages = [
@@ -51,6 +50,12 @@ export default async function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -84,28 +89,44 @@ export default async function sitemap() {
     },
   ];
 
-
   try {
-    const response = await fetch(
+    const nearByPlacesResponse = await fetch(
       "https://www.inforbit.in/demo/hotel-elegance-backend/api/near-by-pace-list",
     );
-    if (!response.ok) {
-      throw new Error(`API response error: ${response.status}`);
+    const blogResponse = await fetch(
+      "https://www.inforbit.in/demo/hotel-elegance-backend/api/blog",
+    );
+
+    let nearByPlaces = [];
+    let blogPages = [];
+    if (nearByPlacesResponse.ok) {
+      const apiResponse = await nearByPlacesResponse.json();
+      const nearByPlacesData = Array.isArray(apiResponse.data)
+        ? apiResponse.data
+        : [];
+      nearByPlaces = nearByPlacesData.map((place) => ({
+        url: `${baseUrl}/near-by-place/${place.slug}`,
+        lastModified: new Date(Date.now()),
+        changeFrequency: "weekly",
+        priority: 0.7,
+      }));
     }
-    const apiResponse = await response.json();
-    const nearByPlacesData = Array.isArray(apiResponse.data)
-      ? apiResponse.data
-      : [];
-    const nearByPlaces = nearByPlacesData.map((place) => ({
-      url: `${baseUrl}/near-by-place/${place.slug}`,
-      lastModified: new Date(Date.now()),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    }));
-    return [...staticPages, ...roomPages, ...nearByPlaces];
+    if (blogResponse.ok) {
+      const blogApiResponse = await blogResponse.json();
+      const blogData = Array.isArray(blogApiResponse.data)
+        ? blogApiResponse.data
+        : [];
+      blogPages = blogData.map((blog) => ({
+        url: `${baseUrl}/blog/${blog.slug}`,
+        lastModified: new Date(Date.now()),
+        changeFrequency: "weekly",
+        priority: 0.6,
+      }));
+    }
+    return [...staticPages, ...roomPages, ...nearByPlaces, ...blogPages];
 
   } catch (error) {
     console.error("Sitemap API error:", error.message);
-    return staticPages;
+    return [...staticPages, ...roomPages];
   }
 }

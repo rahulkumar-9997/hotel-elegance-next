@@ -43,9 +43,9 @@ export const BestRoom = () => {
                                     className="svg-img right-side"
                                 />
                             </p>
-                            <h4>
+                            <h2>
                                 Our Best <span>Rooms</span>
-                            </h4>
+                            </h2>
                         </div>
                     </div>
                     <div

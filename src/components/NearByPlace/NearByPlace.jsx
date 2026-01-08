@@ -31,9 +31,9 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                                 Nearby Places
                                 <RightShapeSVG />
                             </p>
-                            <h4>
+                            <h2>
                                 Explore Varanasi from <span>Hotel Elegance </span>
-                            </h4>
+                            </h2>
                         </div>
                     </div>
 

@@ -41,9 +41,9 @@ export const OurBestServices = () => {
                                     className="svg-img right-side"
                                 />
                             </p>
-                            <h4>
+                            <h2>
                                 Our Best <span>Services</span>
-                            </h4>
+                            </h2>
                         </div>
                     </div>
                     <div
