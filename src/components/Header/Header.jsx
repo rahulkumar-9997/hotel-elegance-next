@@ -194,9 +194,15 @@ export const Header = () => {
                                         </li>
                                     </ul>
                                     <div className="header-button">
-                                        <a
+                                        {/* <a
                                             className="rx-btn-one rounded cursor-pointer"
                                             onClick={() => setIsModalOpen(true)}
+                                        >
+                                            Book Now
+                                        </a> */}
+                                        <a
+                                            className="rx-btn-one rounded cursor-pointer"
+                                            href="https://bookingengine.maximojo.com/?hid=IN-4db8055e-366f-42ed-aa53-7b7673c16629" target="_blank"
                                         >
                                             Book Now
                                         </a>

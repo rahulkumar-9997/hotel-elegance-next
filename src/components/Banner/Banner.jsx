@@ -11,7 +11,7 @@ import { toast } from "@/components/ui/toast";
 export default function Banner({ initialVideo }) {
     const [open, setOpen] = useState(false);
     const [openSecond, setOpenSecond] = useState(false);
-    const [adults, setAdults] = useState(1);
+    const [adults, setAdults] = useState(null);
     const [arrivalDate, setArrivalDate] = useState();
     const [departureDate, setDepartureDate] = useState();
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -181,9 +181,9 @@ export default function Banner({ initialVideo }) {
                     <form id="book-now-form" onSubmit={handleSubmit}>
                         <div className="container desktop rounded">
                             <div className="flex flex-col space-y-2 w-full">
-                                <Label htmlFor="arrival" className="text-sm font-medium text-gray-700 heading">
+                                {/* <Label htmlFor="arrival" className="text-sm font-medium text-gray-700 heading">
                                     Arrive
-                                </Label>
+                                </Label> */}
                                 <Popover open={open} onOpenChange={setOpen} className="helper-popover" >
                                     <PopoverTrigger asChild>
                                         <Button
@@ -196,7 +196,7 @@ export default function Banner({ initialVideo }) {
                                             disabled={isSubmitted}
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
-                                            {arrivalDate ? format(arrivalDate, "PPP") : "Pick a date"}
+                                            {arrivalDate ? format(arrivalDate, "PPP") : "Arrival Date"}
                                         </Button>
                                     </PopoverTrigger>
                                     <PopoverContent className="w-auto p-0">
@@ -218,9 +218,9 @@ export default function Banner({ initialVideo }) {
 
                             {/* Departure Date */}
                             <div className="flex flex-col space-y-2 w-full">
-                                <Label htmlFor="departure" className="text-sm font-medium text-gray-700 heading">
+                                {/* <Label htmlFor="departure" className="text-sm font-medium text-gray-700 heading">
                                     Depart
-                                </Label>
+                                </Label> */}
                                 <Popover open={openSecond} onOpenChange={setOpenSecond} >
                                     <PopoverTrigger asChild>
                                         <Button
@@ -233,7 +233,7 @@ export default function Banner({ initialVideo }) {
                                             disabled={!arrivalDate || isSubmitted}
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
-                                            {departureDate ? format(departureDate, "PPP") : "Pick a date"}
+                                            {departureDate ? format(departureDate, "PPP") : "Departure Date"}
                                         </Button>
                                     </PopoverTrigger>
                                     <PopoverContent className="w-auto p-0">
@@ -259,18 +259,23 @@ export default function Banner({ initialVideo }) {
 
                             {/* Adults Select */}
                             <div className="flex flex-col space-y-2 w-full">
-                                <Label htmlFor="guests" className="text-sm font-medium text-gray-700 heading">
+                                {/* <Label htmlFor="guests" className="text-sm font-medium text-gray-700 heading">
                                     Adults
-                                </Label>
+                                </Label> */}
                                 <select
                                     className="occupants w-full px-3 py-1.5 border border-input bg-background rounded-md text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                                     name="adult"
                                     id="guests"
-                                    value={adults}
-                                    onChange={(e) => setAdults(Number(e.target.value))}
-                                    disabled={isSubmitted}
-                                >
-                                    {[1, 2, 3, 4, 5].map((num) => (
+                                    value={adults || ""}
+                                    onChange={(e) => {
+                                        const value = e.target.value;
+                                        setAdults(value === "" ? null : Number(value));
+                                    }}
+                                    disabled={isSubmitted}                                >
+                                    <option value="" disabled>
+                                        No. of Persons
+                                    </option>
+                                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
                                         <option key={num} value={num}>
                                             {num} {num === 1 ? 'Adult' : 'Adults'}
                                         </option>
@@ -280,15 +285,15 @@ export default function Banner({ initialVideo }) {
 
                             {/* Phone Number */}
                             <div className="flex flex-col space-y-2 w-full">
-                                <Label htmlFor="phone" className="text-sm font-medium text-gray-700 heading">
+                                {/* <Label htmlFor="phone" className="text-sm font-medium text-gray-700 heading">
                                     Phone No.
-                                </Label>
+                                </Label> */}
                                 <input
                                     className="promo-code border px-3 py-2 rounded"
                                     type="text"
                                     id="phone"
                                     name="phone_number"
-                                    placeholder="Enter Phone No."
+                                    placeholder="Contact No."
                                     value={phoneNumber}
                                     onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
                                     required
@@ -300,7 +305,7 @@ export default function Banner({ initialVideo }) {
                             </div>
 
                             {/* Submit Button */}
-                            <div className="text-center mt-3">
+                            <div className="text-center mt-1">
                                 <Button
                                     variant='default'
                                     type="submit"
@@ -322,7 +327,7 @@ export default function Banner({ initialVideo }) {
                                     ) : isSubmitted ? (
                                         "Submitted"
                                     ) : (
-                                        "Book Now"
+                                        "Send Enquiry"
                                     )}
                                 </Button>
                             </div>
