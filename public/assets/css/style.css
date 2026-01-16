@@ -3582,7 +3582,7 @@ footer {
 }
 
 .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box {
-  padding: 20px;
+  padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3602,12 +3602,12 @@ footer {
 }
 
 .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box h5 {
-  margin-bottom: 12px;
+  margin-bottom: 0px;
   font-family: "superior-title", serif;
-  font-size: 23px;
+  font-size: 17px;
   color: #000;
   font-weight: 600;
-  line-height: 0.65;
+  line-height: 30px;
 }
 
 .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box p {

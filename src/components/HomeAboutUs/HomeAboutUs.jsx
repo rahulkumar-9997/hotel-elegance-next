@@ -84,20 +84,20 @@ export const HomeAboutUs = () => {
                   <div className="row mb-minus-24">
                     <div className="col-sm-4 col-12 rx-575-50 mb-24">
                       <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="300">
-                        <h5>554+</h5>
-                        <p>Awards</p>
+                        <h5>Creative Planning</h5>
+                        {/* <p>Awards</p> */}
                       </div>
                     </div>
                     <div className="col-sm-4 col-12 rx-575-50 mb-24 mt-24">
                       <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="400">
-                        <h5>251K+</h5>
-                        <p>Visitors</p>
+                        <h5>Elegant Designs</h5>
+                        {/* <p>Visitors</p> */}
                       </div>
                     </div>
                     <div className="col-sm-4 col-12 rx-575-50 mb-24">
                       <div className="rx-about-box" data-aos="zoom-in" data-aos-delay="500">
-                        <h5>84K+</h5>
-                        <p>Events</p>
+                        <h5>Seamless Execution</h5>
+                        {/* <p>Events</p> */}
                       </div>
                     </div>
                   </div>
