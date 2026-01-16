@@ -25,8 +25,6 @@ const OnexBanquet = ({ onexData }) => {
             once: true,
             offset: 100,
         });
-
-        // Initialize Fancybox only once
         if (!fancyboxInitialized.current) {
             Fancybox.bind("[data-fancybox='gallery-onex']", {
                 Thumbs: {
@@ -55,7 +53,6 @@ const OnexBanquet = ({ onexData }) => {
         }
 
         return () => {
-            // Don't destroy on every render, only on unmount
             Fancybox.unbind("[data-fancybox='gallery-onex']");
             Fancybox.close();
         };
@@ -214,20 +211,44 @@ const OnexBanquet = ({ onexData }) => {
                     </div>
                 </div>
 
-                <div className="row mb-minus-24 justify-content-md-center">
-                    <div className="col-lg-12">
-                        <div className="mt-3">
-                            <div className="text-center">
-                                <p>
-                                    Onex Banquet is an indoor banquet hall with a capacity of 300 and 500 floating guests. Craft your conference meetings in an impeccable manner with our Banquet Hall. At a banquet, you may expect family, friends and associates who may be travelling thus a venue near the Railway Station is best suitable for any function. Our hotel is less than 1 km from the Banaras Railway Station.
-                                </p>
-                                <p className="mt-2">
-                                    Onex Banquet Hall provides a variety of services to effectively organise the event, including cuisine, interior decoration, entertainment, and more. With many friends, family members, and coworkers expected at your event, you would undoubtedly want everything to go smoothly. Such a problem might be simply fixed with the aid of Onex banquet Hall, which not only give you a wonderful location but also assist you in expertly arranging the event.
-                                </p>
+                <div className="flex flex-col lg:flex-row lg:justify-between gap-6 lg:gap-8 -mb-6 mt-3">
+                    <div className="lg:w-8/12">
+                        <div className="space-y-4">
+                            <p className="mb-3">
+                                Onex Banquet is an indoor banquet hall with a capacity of 300 and 500
+                                floating guests. Craft your conference meetings in an impeccable manner
+                                with our Banquet Hall. At a banquet, you may expect family, friends and
+                                associates who may be travelling thus a venue near the Railway Station
+                                is best suitable for any function. Our hotel is less than 1 km from the
+                                Banaras Railway Station.
+                            </p>
+                            <p className="mb-2">
+                                Onex Banquet Hall provides a variety of services to effectively organise
+                                the event, including cuisine, interior decoration, entertainment, and
+                                more. With many friends, family members, and coworkers expected at your
+                                event, you would undoubtedly want everything to go smoothly. Such a
+                                problem might be simply fixed with the aid of Onex banquet Hall, which
+                                not only give you a wonderful location but also assist you in expertly
+                                arranging the event.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="lg:w-4/12">
+                        <div className="relative h-64 w-full max-w-xs mx-auto md:mx-0">
+                            <div className="group bg-[#a27121] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 border border-white">
+                                <div className="relative h-70  w-full">
+                                    <img
+                                        src="/assets/dev-img/onex-logo.jpeg"
+                                        alt="Onex Banquet Logo"
+                                        className="rounded! object-contain h-full w-full filter drop-shadow-lg"
+                                    />
+                                </div>
+                                <div className="absolute inset-0 border-2 border-transparent group-hover:border-amber-200 rounded-2xl transition-colors duration-300 pointer-events-none"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
     );
