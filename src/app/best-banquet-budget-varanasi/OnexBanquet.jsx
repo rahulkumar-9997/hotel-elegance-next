@@ -238,7 +238,7 @@ const OnexBanquet = ({ onexData }) => {
                             <div className="group bg-[#a27121] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 border border-white">
                                 <div className="relative h-70  w-full">
                                     <img
-                                        src="/assets/dev-img/onex-logo.jpeg"
+                                        src="/assets/dev-img/onex-logo.jpg"
                                         alt="Onex Banquet Logo"
                                         className="rounded! object-contain h-full w-full filter drop-shadow-lg"
                                     />

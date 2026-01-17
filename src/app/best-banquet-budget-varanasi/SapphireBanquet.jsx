@@ -212,17 +212,30 @@ const SapphireBanquet = ({ sapphireData }) => {
                         </div>
                     </div>
                 </div>
-                <div className="row mb-minus-24 justify-content-md-center">
-                    <div className="col-lg-12">
-                        <div className="mt-3">
-                            <div className="text-center">
-                                <p>
-                                    Sapphire Banquet Hall provides a variety of services to effectively organise the event, including cuisine, interior decoration, entertainment, and more. With many friends, family members, and coworkers expected at your event, you would undoubtedly want everything to go smoothly. Such a problem might be simply fixed with the aid of Sapphire banquet Hall, which not only give you a wonderful location but also assist you in expertly arranging the event.
-                                </p>
+                <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-6 lg:gap-8 mb-6 mt-3">
+                    <div className="lg:w-8/12">
+                        <div className="space-y-4">
+                            <p>
+                                Sapphire Banquet Hall provides a variety of services to effectively organise the event, including cuisine, interior decoration, entertainment, and more. With many friends, family members, and coworkers expected at your event, you would undoubtedly want everything to go smoothly. Such a problem might be simply fixed with the aid of Sapphire banquet Hall, which not only give you a wonderful location but also assist you in expertly arranging the event.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="lg:w-4/12">
+                        <div className="relative h-64 w-full max-w-xs mx-auto md:mx-0">
+                            <div className="group bg-[#a27121] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 border border-white">
+                                <div className="relative h-70  w-full">
+                                    <img
+                                        src="/assets/dev-img/sapphire.jpg"
+                                        alt="Onex Banquet Logo"
+                                        className="rounded! object-contain h-full w-full filter drop-shadow-lg"
+                                    />
+                                </div>
+                                <div className="absolute inset-0 border-2 border-transparent group-hover:border-amber-200 rounded-2xl transition-colors duration-300 pointer-events-none"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </section>
     );
