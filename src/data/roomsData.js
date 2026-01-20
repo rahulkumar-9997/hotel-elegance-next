@@ -5,7 +5,7 @@ export const roomsData = {
       slug: "suite-room",
       title: "Suite Room",
       subtitle: "No. of Suite Rooms : 2",
-      price: 2500,
+      price: 7500,
       image: "/assets/dev-img/room/suite-room.jpg",
       gallery: [
         "/assets/dev-img/room/suite-room.jpg",        
@@ -18,7 +18,7 @@ export const roomsData = {
         { icon: "Coffee", label: "Coffee Maker" },
         { icon: "Car", label: "Parking" },
       ],
-      size: "400 sq ft",
+      size: "300 sq ft",
       occupancy: "2 Adults",
       description:
         "Indulge in luxury and comfort during your stay in Varanasi with our suite rooms that offer a truly elevated experience.",
@@ -45,7 +45,7 @@ export const roomsData = {
       slug: "premium-room",
       title: "Premium Room",
       subtitle: "No. of Twin Bed Rooms : 6",
-      price: 3000,
+      price: 6000,
       image: "/assets/dev-img/room/premium-room.jpg",
       gallery: [
         "/assets/dev-img/room/premium-room.jpg",
@@ -55,11 +55,11 @@ export const roomsData = {
         { icon: "Bath", label: "Premium Bath" },
         { icon: "Wifi", label: "High-speed WiFi" },
         { icon: "Wind", label: "AC" },
-        { icon: "Utensils", label: "Mini Bar" },
+        
         { icon: "Car", label: "Valet Parking" },
       ],
-      size: "450 sq ft",
-      occupancy: "3 Adults",
+      size: "250 sq ft",
+      occupancy: "2 Adults",
       description:
         "Experience the convenience and affordability of Premium Rooms at The Elegance Hotel in Varanasi during your visit here.",
       detailedDescription: [
@@ -97,8 +97,8 @@ export const roomsData = {
         { icon: "Users", label: "Butler Service" },
         { icon: "Sparkles", label: "Luxury Toiletries" },
       ],
-      size: "600 sq ft",
-      occupancy: "4 Adults",
+      size: "220 sq ft",
+      occupancy: "2 Adults",
       description:
         "The epitome of luxury with exquisite wooden furniture and endless amenities for a royal experience.",
       detailedDescription: [
