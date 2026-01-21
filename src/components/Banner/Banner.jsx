@@ -180,156 +180,160 @@ export default function Banner({ initialVideo }) {
                 ) : (
                     <form id="book-now-form" onSubmit={handleSubmit}>
                         <div className="container desktop rounded">
-                            <div className="flex flex-col space-y-2 w-full">
-                                {/* <Label htmlFor="arrival" className="text-sm font-medium text-gray-700 heading">
-                                    Arrive
-                                </Label> */}
-                                <Popover open={open} onOpenChange={setOpen} className="helper-popover" >
-                                    <PopoverTrigger asChild>
-                                        <Button
-                                            variant={"outline"}
-                                            className={cn(
-                                                "w-full justify-start text-left font-normal px-3 py-2 rounded",
-                                                !arrivalDate && "text-muted-foreground"
-                                            )}
-                                            id="arrival"
-                                            disabled={isSubmitted}
-                                        >
-                                            <CalendarIcon className="mr-2 h-4 w-4" />
-                                            {arrivalDate ? format(arrivalDate, "PPP") : "Arrival Date"}
-                                        </Button>
-                                    </PopoverTrigger>
-                                    <PopoverContent className="w-auto p-0">
-                                        <Calendar
-                                            className="bg-gray-100"
-                                            mode="single"
-                                            selected={arrivalDate}
-                                            captionLayout="dropdown"
-                                            onSelect={(date) => {
-                                                setArrivalDate(date)
-                                                setOpen(false)
-                                            }}
-                                            initialFocus
-                                            disabled={(date) => date < new Date()}
-                                        />
-                                    </PopoverContent>
-                                </Popover>
-                            </div>
+                            <div className="row">
+                                <div className="book-grid">
+                                    {/* <Label htmlFor="arrival" className="text-sm font-medium text-gray-700 heading">
+                                        Arrive
+                                    </Label> */}
+                                    <Popover open={open} onOpenChange={setOpen} className="helper-popover" >
+                                        <PopoverTrigger asChild>
+                                            <Button
+                                                variant={"outline"}
+                                                className={cn(
+                                                    "w-full justify-start text-left font-normal px-3 py-2 rounded",
+                                                    !arrivalDate && "text-muted-foreground"
+                                                )}
+                                                id="arrival"
+                                                disabled={isSubmitted}
+                                            >
+                                                <CalendarIcon className="mr-2 h-4 w-4" />
+                                                {arrivalDate ? format(arrivalDate, "PPP") : "Arrival Date"}
+                                            </Button>
+                                        </PopoverTrigger>
+                                        <PopoverContent className="w-auto p-0">
+                                            <Calendar
+                                                className="bg-gray-100"
+                                                mode="single"
+                                                selected={arrivalDate}
+                                                captionLayout="dropdown"
+                                                onSelect={(date) => {
+                                                    setArrivalDate(date)
+                                                    setOpen(false)
+                                                }}
+                                                initialFocus
+                                                disabled={(date) => date < new Date()}
+                                            />
+                                        </PopoverContent>
+                                    </Popover>
+                                </div>
 
-                            {/* Departure Date */}
-                            <div className="flex flex-col space-y-2 w-full">
-                                {/* <Label htmlFor="departure" className="text-sm font-medium text-gray-700 heading">
-                                    Depart
-                                </Label> */}
-                                <Popover open={openSecond} onOpenChange={setOpenSecond} >
-                                    <PopoverTrigger asChild>
-                                        <Button
-                                            variant={"outline"}
-                                            className={cn(
-                                                "w-full justify-start text-left font-normal px-1 py-3 rounded",
-                                                !departureDate && "text-muted-foreground"
-                                            )}
-                                            id="departure"
-                                            disabled={!arrivalDate || isSubmitted}
-                                        >
-                                            <CalendarIcon className="mr-2 h-4 w-4" />
-                                            {departureDate ? format(departureDate, "PPP") : "Departure Date"}
-                                        </Button>
-                                    </PopoverTrigger>
-                                    <PopoverContent className="w-auto p-0">
-                                        <Calendar
-                                            mode="single"
-                                            selected={departureDate}
-                                            onSelect={(date) => {
-                                                setDepartureDate(date)
-                                                setOpenSecond(false)
-                                            }}
-                                            captionLayout="dropdown"
-                                            initialFocus
-                                            disabled={(date) => {
-                                                if (arrivalDate) {
-                                                    return date <= arrivalDate || date < new Date();
-                                                }
-                                                return date < new Date();
-                                            }}
-                                        />
-                                    </PopoverContent>
-                                </Popover>
-                            </div>
+                                {/* Departure Date */}
+                                <div className="book-grid">
+                                    {/* <Label htmlFor="departure" className="text-sm font-medium text-gray-700 heading">
+                                        Depart
+                                    </Label> */}
+                                    <Popover open={openSecond} onOpenChange={setOpenSecond} >
+                                        <PopoverTrigger asChild>
+                                            <Button
+                                                variant={"outline"}
+                                                className={cn(
+                                                    "w-full justify-start text-left font-normal px-1 py-3 rounded",
+                                                    !departureDate && "text-muted-foreground"
+                                                )}
+                                                id="departure"
+                                                disabled={!arrivalDate || isSubmitted}
+                                            >
+                                                <CalendarIcon className="mr-2 h-4 w-4" />
+                                                {departureDate ? format(departureDate, "PPP") : "Departure Date"}
+                                            </Button>
+                                        </PopoverTrigger>
+                                        <PopoverContent className="w-auto p-0">
+                                            <Calendar
+                                                mode="single"
+                                                selected={departureDate}
+                                                onSelect={(date) => {
+                                                    setDepartureDate(date)
+                                                    setOpenSecond(false)
+                                                }}
+                                                captionLayout="dropdown"
+                                                initialFocus
+                                                disabled={(date) => {
+                                                    if (arrivalDate) {
+                                                        return date <= arrivalDate || date < new Date();
+                                                    }
+                                                    return date < new Date();
+                                                }}
+                                            />
+                                        </PopoverContent>
+                                    </Popover>
+                                </div>
 
-                            {/* Adults Select */}
-                            <div className="flex flex-col space-y-2 w-full">
-                                {/* <Label htmlFor="guests" className="text-sm font-medium text-gray-700 heading">
-                                    Adults
-                                </Label> */}
-                                <select
-                                    className="occupants w-full px-3 py-1.5 border border-input bg-background rounded-md text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                                    name="adult"
-                                    id="guests"
-                                    value={adults || ""}
-                                    onChange={(e) => {
-                                        const value = e.target.value;
-                                        setAdults(value === "" ? null : Number(value));
-                                    }}
-                                    disabled={isSubmitted}                                >
-                                    <option value="" disabled>
-                                        No. of Persons
-                                    </option>
-                                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
-                                        <option key={num} value={num}>
-                                            {num} {num === 1 ? 'Adult' : 'Adults'}
+                                {/* Adults Select */}
+                                <div className="book-grid">
+                                    {/* <Label htmlFor="guests" className="text-sm font-medium text-gray-700 heading">
+                                        Adults
+                                    </Label> */}
+                                    <select
+                                        className="occupants w-full px-3 py-1.5 border border-input bg-background rounded-md text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                                        name="adult"
+                                        id="guests"
+                                        value={adults || ""}
+                                        onChange={(e) => {
+                                            const value = e.target.value;
+                                            setAdults(value === "" ? null : Number(value));
+                                        }}
+                                        disabled={isSubmitted}                                >
+                                        <option value="" disabled>
+                                            No. of Persons
                                         </option>
-                                    ))}
-                                </select>
-                            </div>
+                                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
+                                            <option key={num} value={num}>
+                                                {num} {num === 1 ? 'Adult' : 'Adults'}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
 
-                            {/* Phone Number */}
-                            <div className="flex flex-col space-y-2 w-full">
-                                {/* <Label htmlFor="phone" className="text-sm font-medium text-gray-700 heading">
-                                    Phone No.
-                                </Label> */}
-                                <input
-                                    className="promo-code border px-3 py-2 rounded"
-                                    type="text"
-                                    id="phone"
-                                    name="phone_number"
-                                    placeholder="Contact No."
-                                    value={phoneNumber}
-                                    onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
-                                    required
-                                    pattern="[0-9]{8,15}"
-                                    maxLength={15}
-                                    minLength={8}
-                                    disabled={isSubmitted}
-                                />
-                            </div>
+                                {/* Phone Number */}
+                                <div className="book-grid">
+                                    {/* <Label htmlFor="phone" className="text-sm font-medium text-gray-700 heading">
+                                        Phone No.
+                                    </Label> */}
+                                    <input
+                                        className="promo-code border px-3 py-2 rounded"
+                                        type="text"
+                                        id="phone"
+                                        name="phone_number"
+                                        placeholder="Contact No."
+                                        value={phoneNumber}
+                                        onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
+                                        required
+                                        pattern="[0-9]{8,15}"
+                                        maxLength={15}
+                                        minLength={8}
+                                        disabled={isSubmitted}
+                                    />
+                                </div>
 
-                            {/* Submit Button */}
-                            <div className="text-center mt-1">
-                                <Button
-                                    variant='default'
-                                    type="submit"
-                                    className={`w-full rounded font-semibold rounded transition-all duration-300 flex items-center justify-center transform hover:-translate-y-0.5 ${isSubmitted
-                                        ? 'bg-gray-300 cursor-not-allowed'
-                                        : 'bg-[#410f06] text-white hover:bg-[#310b04] hover:shadow-lg'
-                                        }`}
-                                    id="check-availability"
-                                    disabled={isLoading || !arrivalDate || !departureDate || !phoneNumber || isSubmitted}
-                                >
-                                    {isLoading ? (
-                                        <span className="flex items-center gap-2">
-                                            <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
-                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                                            </svg>
-                                            Processing...
-                                        </span>
-                                    ) : isSubmitted ? (
-                                        "Submitted"
-                                    ) : (
-                                        "Send Enquiry"
-                                    )}
-                                </Button>
+                                {/* Submit Button */}
+                                <div className="book-grid">
+                                    <div className="text-center mt-1">
+                                        <Button
+                                            variant='default'
+                                            type="submit"
+                                            className={`w-full rounded font-semibold rounded transition-all duration-300 flex items-center justify-center transform hover:-translate-y-0.5 ${isSubmitted
+                                                ? 'bg-gray-300 cursor-not-allowed'
+                                                : 'bg-[#410f06] text-white hover:bg-[#310b04] hover:shadow-lg'
+                                                }`}
+                                            id="check-availability"
+                                            disabled={isLoading || !arrivalDate || !departureDate || !phoneNumber || isSubmitted}
+                                        >
+                                            {isLoading ? (
+                                                <span className="flex items-center gap-2">
+                                                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                                    </svg>
+                                                    Processing...
+                                                </span>
+                                            ) : isSubmitted ? (
+                                                "Submitted"
+                                            ) : (
+                                                "Send Enquiry"
+                                            )}
+                                        </Button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>

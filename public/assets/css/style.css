@@ -3743,7 +3743,7 @@ footer {
   }
 
   .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box h5 {
-    font-size: 32px;
+    font-size: 14px;
   }
 
   .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box p {
@@ -3761,8 +3761,9 @@ footer {
   }
 
   .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box h5 {
-    margin-bottom: 8px;
-    font-size: 22px;
+    margin-bottom: 0px;
+    font-size: 13px;
+    line-height: 18px;
   }
 
   .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box p {
@@ -6189,7 +6190,7 @@ figure {
     display: flex;
     align-items: center;
 }
-#book-room .container > div {
+#book-room .container .book-grid {
     border-right: 1px solid #aa833f;
     padding: 15px 10px;
     width: 20%;
@@ -6229,7 +6230,10 @@ figure {
     outline: 2px solid #aa833f;
     outline-offset: -0.75em;
 }
-#book-room .container > div:last-child {
+#book-room .container .row{
+    width: 100%;
+}
+#book-room .container .book-grid:last-child {
     border-right: none;
     padding: 10px;
 }
@@ -6921,16 +6925,32 @@ figure {
     transform: translateY(0%);
   }
   .book-now-widget#book-room .container{
-    width: 98%;
+    width: 100%;
+  }
+  #book-room .container .row {
+      width: auto;
+      padding: 0 5px 0 5px;
   }
   #book-room .container.desktop{
     display: block;
   }
-  #book-room .container > div{
-    width: 100%;
-    text-align: unset;
-    border-right: none;
-    padding: 10px 20px;
+  #book-room .container .book-grid{
+      width: 50%;
+      text-align: unset;
+      border-right: none;
+      padding: 5px 10px;
+  }
+  #book-room .container .book-grid:last-child {
+      width: 100%;
+  }
+  .order-md-1{
+    order: 1;
+  }
+  .order-md-2{
+    order: 2;
+  }
+  .rx-footer-items .rx-items-contact ul li{
+    padding: 2px 0 2px 12px;
   }
   header .header-fixed{
     padding: 10px 0 !important;
@@ -6948,7 +6968,10 @@ figure {
   }
   .rx-rounded-circle .inner-contact{
     top: 31px;
-    left: 48px;
+    /* left: 48px; */
+  }
+  .rx-about-contact .inner-contact .rx-about-inner-box .rx-about-box{
+    padding: 10px;
   }
   .rx-banner h1 {
     font-size: 27px;
