@@ -3832,7 +3832,7 @@ footer {
 .rx-services .services-ico svg path,
 .rx-services .services-ico img path {
   stroke: #aa833f;
-  fill: #aa833f;
+  /* fill: #aa833f; */
 }
 
 .rx-services .services-contact h5 {
