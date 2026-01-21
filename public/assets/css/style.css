@@ -6232,6 +6232,7 @@ figure {
 }
 #book-room .container .row{
     width: 100%;
+    margin: 0 8px 0 8px;
 }
 #book-room .container .book-grid:last-child {
     border-right: none;
