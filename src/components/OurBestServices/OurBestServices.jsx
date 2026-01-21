@@ -47,7 +47,7 @@ export const OurBestServices = () => {
                         </div>
                     </div>
                     <div
-                        className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                     >
@@ -71,7 +71,7 @@ export const OurBestServices = () => {
                         </div>
                     </div>
                     <div
-                        className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                         data-aos-delay="200"
@@ -96,7 +96,7 @@ export const OurBestServices = () => {
                         </div>
                     </div>
                     <div
-                        className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                         data-aos-delay="400"
@@ -121,7 +121,7 @@ export const OurBestServices = () => {
                         </div>
                     </div>
                     <div
-                        className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                         data-aos-delay="600"
@@ -146,7 +146,7 @@ export const OurBestServices = () => {
                         </div>
                     </div>
                     <div
-                        className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                     >
@@ -171,7 +171,7 @@ export const OurBestServices = () => {
                     </div>
                     
                     <div
-                        className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                         data-aos-delay="400"
