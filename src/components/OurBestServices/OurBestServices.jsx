@@ -90,7 +90,7 @@ export const OurBestServices = () => {
                                     <li>- Comfortable Bedding</li>
                                     <li>- Bathroom &amp; Pool</li>
                                     <li>- Tv, Ac &amp; Heathing</li>
-                                    <li>- Mini Bar &amp; Safe</li>
+                                    <li>- Mini Refrigerator</li>
                                 </ul>
                             </div>
                         </div>
@@ -113,8 +113,8 @@ export const OurBestServices = () => {
                                 <h5>Transfer Services</h5>
                                 <ul>
                                     <li>- Restaurant &amp; Cafe</li>
-                                    <li>- Bar &amp; Lounge</li>
-                                    <li>- Cafe &amp; Canteen</li>
+                                    <li>- Lounge</li>
+                                    
                                     <li>- Room service</li>
                                 </ul>
                             </div>
@@ -137,10 +137,10 @@ export const OurBestServices = () => {
                             <div className="services-contact">
                                 <h5>Multi-Cuisine</h5>
                                 <ul>
-                                    <li>- Swimming pool</li>
-                                    <li>- Gym / Fitness center</li>
-                                    <li>- Spa &amp; Beauty</li>
-                                    <li>- Sauna &amp; Steam Room</li>
+                                    <li>- Chinese Cuisine</li>
+                                    <li>- Continental Cuisine</li>
+                                    <li>- Delcious Breakfast</li>
+                                    <li>- Catering for Events</li>
                                 </ul>
                             </div>
                         </div>
@@ -169,31 +169,7 @@ export const OurBestServices = () => {
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
-                        data-aos="flip-left"
-                        data-aos-duration="1000"
-                        data-aos-delay="200"
-                    >
-                        <div className="rx-services">
-                            <div className="services-ico">
-                                <img
-                                    src="assets/img/services/6.svg"
-                                    alt="services-6"
-                                    className="svg-img"
-                                />
-                            </div>
-                            <div className="services-contact">
-                                <h5>Family Facilities</h5>
-                                <ul>
-                                    <li>- Kids Club</li>
-                                    <li>- Babysitting Services</li>
-                                    <li>- Family Rooms</li>
-                                    <li>- Game zone</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div
                         className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
                         data-aos="flip-left"
@@ -219,31 +195,7 @@ export const OurBestServices = () => {
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
-                        data-aos="flip-left"
-                        data-aos-duration="1000"
-                        data-aos-delay="600"
-                    >
-                        <div className="rx-services">
-                            <div className="services-ico">
-                                <img
-                                    src="assets/img/services/8.svg"
-                                    alt="services-8"
-                                    className="svg-img"
-                                />
-                            </div>
-                            <div className="services-contact">
-                                <h5>Special Features</h5>
-                                <ul>
-                                    <li>- Custom Rooms</li>
-                                    <li>- Garden &amp; Golf</li>
-                                    <li>- Terrace</li>
-                                    <li>- Event Spaces</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
