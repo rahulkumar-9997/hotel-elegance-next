@@ -81,17 +81,17 @@ export const roomsData = {
     },
     {
       id: 3,
-      slug: "king-size-room",
-      title: "King Size Room",
-      subtitle: "No. of King Size Rooms : 19",
-      price: 5000,
+      slug: "standard-room",
+      title: "Standard Room",
+      subtitle: "No. of Standard Rooms : 19",
+      price: 4000,
       image: "/assets/dev-img/room/king-size-room.jpg",
       gallery: [
         "/assets/dev-img/room/king-size-room.jpg",
       ],
       amenities: [
         { icon: "Bed", label: "Emperor Bed" },
-        { icon: "Bath", label: "Jacuzzi" },
+        { icon: "Bath", label: "Attached Bathroom" },
         { icon: "Wifi", label: "Premium WiFi" },
         { icon: "ShieldCheck", label: "Safe" },
         { icon: "Users", label: "Butler Service" },
@@ -107,7 +107,7 @@ export const roomsData = {
         "Located with easy accessibility to all of Varanasi's main attractions, our double bedrooms provide easy access to the city's bustling markets, ancient temples, and serene ghats along the Ganges River. After a day of exploring the sights and sounds of Varanasi, return to your inviting double bedroom and unwind in comfort. With attentive service and a convenient location, our double bedrooms offer the perfect accommodation for your visit to Varanasi city, whether you're here for business or leisure. ",
     ],
       bedType: "Emperor",
-      bathroomType: "Jacuzzi",
+      bathroomType: "Attached Bathroom",
       view: "City View",
       features: [
         "King size bed with premium mattress",

@@ -18,7 +18,7 @@ export const HomeAboutUs = () => {
       <div className="container">
         <div className="row mb-minus-24">
           <div
-            className="col-lg-6 col-12 mb-24"
+            className="col-lg-6 mb-24 order-md-2"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
@@ -51,7 +51,7 @@ export const HomeAboutUs = () => {
             </div>
           </div>
           <div
-            className="col-lg-6 col-12 mb-24"
+            className="col-lg-6 mb-24 order-md-1"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="200"

@@ -20,7 +20,7 @@ export const OurBestServices = () => {
             }
         }
     }, []);
-   
+
 
     return (
         <section className="section-services padding-tb-50">
@@ -47,155 +47,136 @@ export const OurBestServices = () => {
                         </div>
                     </div>
                     <div
-                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-4 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
-                                <img
-                                    src="assets/img/services/1.svg"
-                                    alt="services-1"
-                                    className="svg-img"
-                                />
+                                <img src="assets/img/services/front-desk-and-guest-support.svg" alt="front-desk" className="svg-img" />
                             </div>
                             <div className="services-contact">
-                                <h5>Friendly Service</h5>
+                                <h5>Front Desk & Guest Support</h5>
                                 <ul>
-                                    <li>- Reception/Front Desk</li>
-                                    <li>- Room Service</li>
-                                    <li>- Housekeeping</li>
-                                    <li>- Wi-Fi &amp; Parking</li>
+                                    <li>- 24/7 Front Desk Assistance</li>
+                                    <li>- Express Check-in & Check-out</li>
+                                    <li>- Taxi & Cab Booking Support</li>
+                                    <li>- Travel & Local Guidance</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div
-                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-4 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                         data-aos-delay="200"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
-                                <img
-                                    src="assets/img/services/2.svg"
-                                    alt="services-2"
-                                    className="svg-img"
-                                />
+                                <img src="assets/img/services/room-and-comfort-services.svg" alt="room-services" className="svg-img" />
                             </div>
                             <div className="services-contact">
-                                <h5>Get Breakfast</h5>
+                                <h5>Room & Comfort Services</h5>
                                 <ul>
-                                    <li>- Comfortable Bedding</li>
-                                    <li>- Bathroom &amp; Pool</li>
-                                    <li>- Tv, Ac &amp; Heathing</li>
-                                    <li>- Mini Refrigerator</li>
+                                    <li>- Daily Housekeeping</li>
+                                    <li>- Clean Linen & Towels</li>
+                                    <li>- In-Room Dining</li>
+                                    <li>- Extra Bed on Request</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div
-                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-4 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                         data-aos-delay="400"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
-                                <img
-                                    src="assets/img/services/3.svg"
-                                    alt="services-3"
-                                    className="svg-img"
-                                />
+                                <img src="assets/img/services/connectivity-and-utilities.svg" alt="connectivity" className="svg-img" />
                             </div>
                             <div className="services-contact">
-                                <h5>Transfer Services</h5>
+                                <h5>Connectivity & Utilities</h5>
                                 <ul>
-                                    <li>- Restaurant &amp; Cafe</li>
-                                    <li>- Lounge</li>
-                                    <li>- Roof Top Restaurant</li>
-                                    <li>- Room service</li>
+                                    <li>- Free High-Speed Wi-Fi</li>
+                                    <li>- Power Backup</li>
+                                    <li>- Lift Access</li>
+                                    <li>- Air-Conditioned Rooms</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div
-                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-4 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                         data-aos-delay="600"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
-                                <img
-                                    src="assets/img/services/4.svg"
-                                    alt="services-4"
-                                    className="svg-img"
-                                />
+                                <img src="assets/img/services/dining-and-lounge-services.svg" alt="dining" className="svg-img" />
                             </div>
                             <div className="services-contact">
-                                <h5>Multi-Cuisine</h5>
+                                <h5>Dining & Lounge Services</h5>
                                 <ul>
-                                    <li>- Mughlai & Chinese Cuisine</li>
-                                    <li>- Continental Cuisine</li>
-                                    <li>- Delicious Breakfast</li>
-                                    <li>- Catering for Events</li>
+                                    <li>- Multi-Cuisine Restaurant</li>
+                                    <li>- In-House Lounge</li>
+                                    <li>- Veg & Non-Veg Options</li>
+                                    <li>- Breakfast, Lunch & Dinner</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div
-                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-4 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
-                                <img
-                                    src="assets/img/services/5.svg"
-                                    alt="services-5"
-                                    className="svg-img"
-                                />
+                                <img src="assets/img/services/business-events.svg" alt="room-facilities" className="svg-img" />
                             </div>
                             <div className="services-contact">
-                                <h5>Cozy Rooms</h5>
+                                <h5>Business & Events</h5>
                                 <ul>
-                                    <li>- Conference Hall</li>
-                                    <li>- Meeting Rooms</li>
-                                    <li>- Business Center</li>
-                                    <li>- Wi-Fi &amp; Internet</li>
+                                    <li>- Professional Space for Meetings & Conferences</li>
+                                    <li>- Perfect Choice for Business Gatherings</li>
+                                    <li>- Corporate-Friendly Event Facilities</li>
+                                    <li>- Smart Infrastructure for Business Events</li>                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div
-                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 rx-575-50"
+                        className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-4 rx-575-50"
                         data-aos="flip-left"
                         data-aos-duration="1000"
                         data-aos-delay="400"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
-                                <img
-                                    src="assets/img/services/7.svg"
-                                    alt="services-7"
-                                    className="svg-img"
-                                />
+                                <img src="assets/img/services/parking-and-accessibility.svg" alt="parking" className="svg-img" />
                             </div>
                             <div className="services-contact">
-                                <h5>Additional Services</h5>
+                                <h5>Parking & Accessibility</h5>
                                 <ul>
-                                    <li>- Concierge</li>
-                                    <li>- Laundry &amp; Dry Cleaning</li>
-                                    <li>- Shuttle Service</li>
-                                    <li>- Pet-Friendly</li>
+                                    <li>- On-Site Parking</li>
+                                    <li>- Secure Parking Area</li>
+                                    <li>- Easy Vehicle Access</li>
+                                    <li>- Lift Access</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    
+
+
                 </div>
             </div>
         </section>
