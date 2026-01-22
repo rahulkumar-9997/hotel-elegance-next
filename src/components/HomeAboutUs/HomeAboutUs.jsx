@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { LeftShapeSVG, RightShapeSVG } from '../SVG/BannerShapes';
 export const HomeAboutUs = () => {
   useEffect(() => {
     AOS.init({
@@ -57,8 +57,14 @@ export const HomeAboutUs = () => {
             data-aos-delay="200"
           >
             <div className="rx-about-contact">
-              <div className="rx-banner">
-                <p>The Elegance</p>
+              <div className="rx-banner about-homeb rx-banner-effects">
+                
+                <p className="mb-2">
+                  <LeftShapeSVG />
+                  The Elegance
+                  <RightShapeSVG />
+                </p>
+                
                 <h1 className="home-about">
                   Best Hotel in Varanasi near <span>Railway Station</span>
                 </h1>

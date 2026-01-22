@@ -121,7 +121,7 @@ export const roomsData = {
   ],
 
   pageContent: {
-    seoTitle: "Hotel Rooms in Varanasi near Railway Station",
+    seoTitle: "Hotel near Varanasi Station",
     title: "Best Hotel in Varanasi for Accommodation",
     breadcrumbTitle: "Accommodation",
     intro: [

@@ -92,7 +92,7 @@ export default function BlogDetailsPage({ blog }) {
                                             blog.images.map((image, index) => (
                                                 <div
                                                     key={image.id}
-                                                    className="col-xl-3 col-lg-4 col-sm-6 col-12 mb-24 masonry-item"
+                                                    className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-24 masonry-item"
                                                     data-aos="flip-left"
                                                     data-aos-duration={1000}
                                                     data-aos-delay={getAnimationDelay(index)}

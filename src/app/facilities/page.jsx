@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import { LeftShapeSVG, RightShapeSVG } from '@/components/SVG/BannerShapes';
 async function getFacilitiesData() {
     try {
         const res = await fetch(
@@ -49,19 +50,11 @@ export default async function FacilitiesPage() {
                     <div className="row justify-content-between">
                         <div className="col-md-4" data-aos="fade-up" data-aos-duration="1000">
                             <div className="services-left-content sticky">
-                                <div className="rx-banner rx-banner-effects">
+                                <div className="rx-banner rx-banner-effects facilities-banner-d">
                                     <p>
-                                        <img
-                                            src="assets/img/banner/left-shape.svg"
-                                            alt="banner-left-shape"
-                                            className="svg-img left-side"
-                                        />
+                                        <LeftShapeSVG />
                                         Facilities
-                                        <img
-                                            src="assets/img/banner/right-shape.svg"
-                                            alt="banner-right-shape"
-                                            className="svg-img right-side"
-                                        />
+                                        <RightShapeSVG />
                                     </p>
                                     <h1>
                                         Best Boutique Hotel in Varanasi
