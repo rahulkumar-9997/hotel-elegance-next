@@ -5,8 +5,9 @@ import { LeftShapeSVG, RightShapeSVG } from '@/components/SVG/BannerShapes';
 async function getFacilitiesData() {
     try {
         const res = await fetch(
-            'https://www.inforbit.in/demo/hotel-elegance-backend/api/facilities',
-             
+            'https://www.inforbit.in/demo/hotel-elegance-backend/api/facilities',{
+                next: { revalidate: 10 }
+            }
         );
         if (!res.ok) {
             throw new Error(`Failed to fetch facilities data: ${res.status}`);

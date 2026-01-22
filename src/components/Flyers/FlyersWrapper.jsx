@@ -3,7 +3,9 @@ import { Suspense } from 'react';
 async function getFlyersUrl() {
     try {
         const res = await fetch(
-            "https://www.inforbit.in/demo/hotel-elegance-backend/api/flyers-home",
+            "https://www.inforbit.in/demo/hotel-elegance-backend/api/flyers-home", {
+                next: { revalidate: 10 }
+            }
         );
 
         if (!res.ok) {

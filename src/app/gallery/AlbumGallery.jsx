@@ -47,7 +47,7 @@ export default function AlbumGallery({ initialData, currentAlbumId }) {
             url.searchParams.set('album_id', albumId);
             router.push(url.toString());
             const response = await fetch(
-                `https://www.inforbit.in/demo/hotel-elegance-backend/api/album-gallery?album_id=${albumId}`
+                `https://www.inforbit.in/demo/hotel-elegance-backend/api/album-gallery?album_id=${albumId}`, { next: { revalidate: 10 } }   
             );            
             if (response.ok) {
                 const newData = await response.json();

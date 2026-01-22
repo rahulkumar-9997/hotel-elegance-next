@@ -76,8 +76,11 @@ const HomeBlogSkeleton = () => {
 async function getHomeBlogData() {
     try {
         const res = await fetch(
-            "https://www.inforbit.in/demo/hotel-elegance-backend/api/home-blog",
+            "https://www.inforbit.in/demo/hotel-elegance-backend/api/home-blog", {
+                next: { revalidate: 10 },
+            }
         );
+
 
         if (!res.ok) {
             throw new Error(`Failed to fetch blog data. Status: ${res.status}`);

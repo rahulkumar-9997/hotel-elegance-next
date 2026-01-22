@@ -57,7 +57,7 @@ export default function BlogDetailsPage({ blog }) {
                                             />
                                         )}
                                     </div>
-                                    <div className="blog_paragraphs mb-3">
+                                    <div className="blog_paragraphs mb-3 ">
                                         {blog.paragraphs && blog.paragraphs.map((paragraph, index) => (
                                             <div key={index} className="bg-gradient-to-tr from-[#f5f5f5] via-[#f5f5f5] to-[#f5f5f5] backdrop-blur-sm rounded p-2 border border-gray-700/50 mb-3">
                                                 {paragraph.title && (
@@ -67,15 +67,20 @@ export default function BlogDetailsPage({ blog }) {
                                                 )}
                                                 {paragraph.image && (
                                                     <div className="mt-3">
-                                                        <img
+                                                        <div className="para-img featureCard__image ratio ratio-19:22 rounded-24 -hover-image-scale__image">
+                                                            <Image
                                                             src={paragraph.image}
                                                             alt={paragraph.title || blog.title}
-                                                            className="img-fluid w-100 paragraph-image"                                                           
-                                                        />
+                                                            className="img-ratio paragraph-image rounded! mb-2" 
+                                                            width={500}
+                                                            height={300}
+                                                            sizes="400px"                                                          
+                                                            />
+                                                        </div>
                                                     </div>
                                                 )}
                                                 {paragraph.content && (
-                                                    <div className="paragraph-content mt-3"
+                                                    <div className="paragraph-content mt-3 blog-post-data"
                                                         dangerouslySetInnerHTML={renderHTML(paragraph.content)}
                                                     />
                                                 )}
