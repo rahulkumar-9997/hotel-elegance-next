@@ -2,7 +2,7 @@ async function getNearByAttractionUrl() {
     try {
         const res = await fetch(
             "https://www.inforbit.in/demo/hotel-elegance-backend/api/attraction-home",{ 
-                next: { revalidate: 10 } 
+                cache: "no-store"
             }            
         );
         if (!res.ok) {

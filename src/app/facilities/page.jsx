@@ -6,7 +6,7 @@ async function getFacilitiesData() {
     try {
         const res = await fetch(
             'https://www.inforbit.in/demo/hotel-elegance-backend/api/facilities',{
-                next: { revalidate: 10 }
+                cache: "no-store"
             }
         );
         if (!res.ok) {
