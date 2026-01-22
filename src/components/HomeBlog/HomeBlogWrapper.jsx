@@ -77,7 +77,7 @@ async function getHomeBlogData() {
     try {
         const res = await fetch(
             "https://www.inforbit.in/demo/hotel-elegance-backend/api/home-blog", {
-                next: { revalidate: 10 },
+                cache: "no-store",
             }
         );
 
