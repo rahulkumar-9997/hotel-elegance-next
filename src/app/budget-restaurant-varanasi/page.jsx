@@ -80,9 +80,9 @@ export default function RestaurantPage() {
                                                 </div>
                                                 <div className="inner-menu">
                                                     <div className="sub-contact">
-                                                        <h5>A Haven for Indian Cuisine Lovers</h5>
+                                                        <h5>A Haven for Multi Cuisine Lovers</h5>
                                                         <p>
-                                                            Urban Chaupal in Varanasi is a hidden gem, renowned for its unparalleled Indian cuisine. With a vegetarian paradise and captivating interiors, it offers a unique and delightful dining experience.
+                                                            Urban Chaupal in Varanasi is a hidden gem, renowned for its unparalleled Multi cuisine. A paradise for food lovers with Vegetarian & Non Vegetarian options, from Indian, Mughlai, Chinese & Continental Cuisines, with captivating interiors, it offers a unique and delightful dining experience.
                                                         </p>
                                                     </div>
                                                 </div>
