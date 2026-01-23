@@ -368,16 +368,7 @@ export default function tariffPage() {
                             </p>
                         </div>
                     </div>
-                    <div className="mt-2">
-                        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 md:gap-4">
-                            <div className="noteThat bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-2 mb-2"> 
-                                <p className="text-blck mb-0">
-                                    <strong>Please Note:</strong>
-                                     In case of any Cancellation from the Hotel side, or failure in part of commitment from the Hotel regarding Room Reservations, we will refund the Advance amount paid by the Customer as well as additional Rs.1000 penalty per room. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </section>
             <EnquiryModal 
