@@ -63,7 +63,7 @@ export default function tariffPage() {
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Tariff.jpg"
                 subtitle=""
             />
-            <section className="section-menu padding-t-100 padding-b-20 tarrif-pages">
+            <section className="section-menu padding-b-20 tarrif-pages">
                 <div className="container">
                     <div className="row justify-content-md-center">
                         <div className="col-md-8" data-aos="fade-up" data-aos-duration={1000}>
