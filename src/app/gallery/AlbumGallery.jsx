@@ -65,7 +65,7 @@ export default function AlbumGallery({ initialData, currentAlbumId }) {
     };
     if (!galleryData?.status) {
         return (
-            <section className="section-gallery padding-tb-100">
+            <section className="section-gallery">
                 <div className="container">
                     <div className="text-center py-20">
                         <p className="text-gray-600">Gallery data is currently unavailable.</p>
@@ -76,7 +76,7 @@ export default function AlbumGallery({ initialData, currentAlbumId }) {
     }
     const { albums, images, selected_album, total_images } = galleryData.data;
     return (
-        <section className="section-gallery padding-tb-100">
+        <section className="section-gallery">
             <div className="container">
                 <div className="gallery-masonry-container">
                     <div className="row">
