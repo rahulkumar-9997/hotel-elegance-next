@@ -73,7 +73,7 @@ export default function RoomsPage() {
         <>
             <Breadcrumb
                 title={roomsData.pageContent.breadcrumbTitle}
-                backgroundImage="/assets/dev-img/bread-banner/Rooms.jpg"
+                backgroundImage="/assets/dev-img/bread-banner/elegance-rooms-varanasi.jpeg"
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Rooms.jpg"
                 subtitle=""
             />

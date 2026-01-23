@@ -26,7 +26,7 @@ export default function RestaurantPage() {
             {/* Breadcrumb */}
             <Breadcrumb 
                 title="Restaurant" 
-                backgroundImage="/assets/dev-img/bread-banner/Restaurants.jpg"
+                backgroundImage="/assets/dev-img/bread-banner/best-restaurant-varanasi-elegance.jpeg"
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/resturant.jpg"
                 subtitle=""
             />

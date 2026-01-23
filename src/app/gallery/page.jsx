@@ -53,7 +53,7 @@ export default async function GalleryPage({ searchParams }) {
         <>
             <Breadcrumb
                 title="Gallery"
-                backgroundImage="/assets/img/banner/banner.jpg"
+                backgroundImage="/assets/dev-img/bread-banner/elegance-best-hotel-varanasi.jpg"
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Gallery.jpg"
                 subtitle=""
             />

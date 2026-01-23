@@ -59,7 +59,7 @@ export default function tariffPage() {
             {/* Breadcrumb */}
             <Breadcrumb 
                 title="Tariff" 
-                backgroundImage="/assets/dev-img/bread-banner/Tariff.jpg"
+                backgroundImage="/assets/dev-img/bread-banner/best=room-rates-varanasi.jpeg"
                 mobileBackgroundImage="/assets/dev-img/bread-banner/mobile/Tariff.jpg"
                 subtitle=""
             />
