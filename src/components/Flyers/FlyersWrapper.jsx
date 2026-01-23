@@ -3,9 +3,7 @@ import { Suspense } from 'react';
 async function getFlyersUrl() {
     try {
         const res = await fetch(
-            "https://www.inforbit.in/demo/hotel-elegance-backend/api/flyers-home", {
-                cache: "no-store"
-            }
+            "https://www.inforbit.in/demo/hotel-elegance-backend/api/flyers-home"
         );
 
         if (!res.ok) {

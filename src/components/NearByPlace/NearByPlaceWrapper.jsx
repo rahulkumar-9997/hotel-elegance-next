@@ -1,9 +1,7 @@
 async function getNearByPlaceUrl() {
     try {
         const res = await fetch(
-            "https://www.inforbit.in/demo/hotel-elegance-backend/api/near-place-home", {
-               cache: "no-store"
-            }
+            "https://www.inforbit.in/demo/hotel-elegance-backend/api/near-place-home"
         );
         if (!res.ok) {
             throw new Error(`Failed to fetch Near by place Status: ${res.status}`);

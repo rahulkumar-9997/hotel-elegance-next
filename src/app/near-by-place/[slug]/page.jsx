@@ -5,8 +5,7 @@ import NearByPlaceDetailsPage from './NearByPlaceDetailsPage';
 async function getNearByPlaceDetails(slug) {
     try {
         const res = await fetch(
-            `https://www.inforbit.in/demo/hotel-elegance-backend/api/near-by-pace-list/${slug}`, {  cache: "no-store"            
-        }
+            `https://www.inforbit.in/demo/hotel-elegance-backend/api/near-by-pace-list/${slug}`
         );
         if (!res.ok) {
             throw new Error(`Failed to fetch data: ${res.status}`);

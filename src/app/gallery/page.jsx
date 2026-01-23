@@ -8,7 +8,7 @@ async function getAlbumGallery(albumId = null) {
         if (albumId) {
             url += `?album_id=${albumId}`;
         }
-        const res = await fetch(url, { cache: "no-store" });
+        const res = await fetch(url);
         if (!res.ok) {
             throw new Error(`Failed to fetch gallery data: ${res.status}`);
         }

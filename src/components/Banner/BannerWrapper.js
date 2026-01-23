@@ -1,9 +1,7 @@
 async function getVideoUrl() {
   try {
     const res = await fetch(
-      "https://www.inforbit.in/demo/hotel-elegance-backend/api/banner/video", {
-        cache: "no-store"
-      }
+      "https://www.inforbit.in/demo/hotel-elegance-backend/api/banner/video"
     );
 
     if (!res.ok) {
