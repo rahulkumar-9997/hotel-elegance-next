@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LeftShapeSVG, RightShapeSVG } from '../SVG/BannerShapes';
+
 export const HomeBlog = ({ initialBlogData }) => {
     if (!initialBlogData || initialBlogData.length === 0) {
         return (

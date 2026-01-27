@@ -104,7 +104,7 @@ export default async function TafriLoungePage() {
                                     </p>
                                     <div className="border-b border-gray-300 w-full h-px my-2.5" />
                                     <p className="mt-2 text-white">
-                                        We pride ourselves on our extensive drink menu, featuring a wide variety of cocktails, spirits, wines, and non-alcoholic beverages to satisfy every palate. Our skilled bartenders are masters of their craft, creating both classic and innovative drinks that will delight your senses.
+                                        We pride on our extensive menu, featuring a wide variety of mocktails and non alcoholic beverages to satisfied every palate. Our skilled bartender are master in their signature mocktails and classic also. He will prepare mocktails according to guest demand.
                                     </p>
                                     <div className="border-b border-gray-300 w-full h-px my-2.5" />
                                     <p className="mt-2 text-white">
