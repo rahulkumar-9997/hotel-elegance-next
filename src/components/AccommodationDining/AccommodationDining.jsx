@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
 import EnquiryModal from '../EnquiryModal/EnquiryModal';
 
@@ -58,24 +56,6 @@ export const AccommodationDining = () => {
             description: "Welcome to The Elegance Hotel in Varanasi, to create an unforgettable travel experience. Our hotel rooms in Varanasi city offer a comfortable and convenient stay for travelers eager to explore."
         }
     ]);
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-        });
-        if (typeof window !== 'undefined') {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => {
-                    imageTosvg();
-                });
-            } else {
-                imageTosvg();
-            }
-        }
-    }, []);
-
     return (
         <>
             <section className="section-amenities padding-tb-50 about-bg-first text-bg-white accomndation-section">
@@ -85,7 +65,7 @@ export const AccommodationDining = () => {
                 />
                 <div className="container">
                     <div className="row">
-                        <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
+                        <div className="col-12">
                             <div className="rx-banner text-center rx-banner-effects">
                                 <p>
                                     <img
@@ -106,10 +86,7 @@ export const AccommodationDining = () => {
                             </div>
                         </div>
                         <div
-                            className="col-12"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="200"
+                            className="col-12"                           
                         >
                             <Carousel
                                 className="w-full"

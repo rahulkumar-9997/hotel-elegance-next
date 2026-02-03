@@ -1,18 +1,11 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
 import EnquiryModal from '@/components/EnquiryModal/EnquiryModal';  
 export const BestRoom = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [title, setTitle] = useState("");
     useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-        });
         if (typeof window !== 'undefined') {
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', () => {
@@ -28,7 +21,7 @@ export const BestRoom = () => {
         <section className="section-room padding-t-50 padding-b-40">
             <div className="container">
                 <div className="row mb-minus-24">
-                    <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
+                    <div className="col-12">
                         <div className="rx-banner text-center rx-banner-effects">
                             <p>
                                 <img
@@ -50,8 +43,7 @@ export const BestRoom = () => {
                     </div>
                     <div
                         className="col-lg-4 col-md-6 col-sm-12 col-12 mb-24"
-                        data-aos="fade-up"
-                        data-aos-duration={1000}
+                       
                     >
                         <div className="rx-rooms-box-2">
                             <div className="rx-rooms-img">
@@ -84,9 +76,6 @@ export const BestRoom = () => {
                     </div>
                     <div
                         className="col-lg-4 col-md-6 col-sm-12 col-12 mb-24"
-                        data-aos="fade-up"
-                        data-aos-duration={1000}
-                        data-aos-delay={200}
                     >
                         <div className="rx-rooms-box-2">
                             <div className="rx-rooms-img">
@@ -119,9 +108,6 @@ export const BestRoom = () => {
                     </div>
                     <div
                         className="col-lg-4 col-md-6 col-sm-12 col-12 mb-24"
-                        data-aos="fade-up"
-                        data-aos-duration={1000}
-                        data-aos-delay={400}
                     >
                         <div className="rx-rooms-box-2">
                             <div className="rx-rooms-img">

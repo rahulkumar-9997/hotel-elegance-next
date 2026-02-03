@@ -1,32 +1,12 @@
 "use client";
 import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { imageTosvg } from '@/utils/imageToSvg';
-export const OurBestServices = () => {
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-        });
-        if (typeof window !== 'undefined') {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => {
-                    imageTosvg();
-                });
-            } else {
-                imageTosvg();
-            }
-        }
-    }, []);
-
-
+export const OurBestServices = () => {   
     return (
         <section className="section-services padding-tb-50">
             <div className="container">
                 <div className="row mb-minus-24">
-                    <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
+                    <div className="col-12">
                         <div className="rx-banner text-center rx-banner-effects">
                             <p>
                                 <img
@@ -48,8 +28,6 @@ export const OurBestServices = () => {
                     </div>
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
-                        data-aos="flip-left"
-                        data-aos-duration="1000"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
@@ -69,9 +47,6 @@ export const OurBestServices = () => {
 
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
-                        data-aos="flip-left"
-                        data-aos-duration="1000"
-                        data-aos-delay="200"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
@@ -91,9 +66,6 @@ export const OurBestServices = () => {
 
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
-                        data-aos="flip-left"
-                        data-aos-duration="1000"
-                        data-aos-delay="400"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
@@ -113,9 +85,6 @@ export const OurBestServices = () => {
 
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
-                        data-aos="flip-left"
-                        data-aos-duration="1000"
-                        data-aos-delay="600"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
@@ -135,8 +104,6 @@ export const OurBestServices = () => {
 
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
-                        data-aos="flip-left"
-                        data-aos-duration="1000"
                     >
                         <div className="rx-services">
                             <div className="services-ico">
@@ -156,9 +123,6 @@ export const OurBestServices = () => {
 
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
-                        data-aos="flip-left"
-                        data-aos-duration="1000"
-                        data-aos-delay="400"
                     >
                         <div className="rx-services">
                             <div className="services-ico">

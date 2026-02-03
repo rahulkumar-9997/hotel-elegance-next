@@ -1,26 +1,14 @@
 "use client";
 import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { LeftShapeSVG, RightShapeSVG } from '../SVG/BannerShapes';
-export const HomeAboutUs = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
-      delay: 200,
-    });
-  }, []);
+export const HomeAboutUs = () => { 
 
   return (
     <section className="section-about padding-tb-50">
       <div className="container">
         <div className="row mb-minus-24">
           <div
-            className="col-lg-6 mb-24 order-md-2"
-            data-aos="fade-up"
-            data-aos-duration="1000"
+            className="col-lg-6 mb-24 order-md-2"            
           >
             <div className="rx-about-img">
               <img
@@ -51,10 +39,7 @@ export const HomeAboutUs = () => {
             </div>
           </div>
           <div
-            className="col-lg-6 mb-24 order-md-1"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
+            className="col-lg-6 mb-24 order-md-1"          
           >
             <div className="rx-about-contact">
               <div className="rx-banner about-homeb rx-banner-effects">
