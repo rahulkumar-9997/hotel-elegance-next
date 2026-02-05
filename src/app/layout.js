@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css" />
         <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css" /> */}
         {/* Main Style */}
-        <link rel="stylesheet" href="/assets/css/style.css?v=6.0.0" />        
+        <link rel="stylesheet" href="/assets/css/style.css?v=7.0.0" />        
       </head>
       <body>
         <div className="page-wraper">
