@@ -21,12 +21,18 @@ export async function generateMetadata({ params }) {
         return {
             title: "Blog Not Found - Hotel Elegance",
             description: "The requested blog could not be found.",
+            alternates: {
+                canonical: `https://www.theelegance.co.in/blog/${slug}`,
+            },
         };
     }
     const blog = res.data;
     return {
         title: blog.meta_title || blog.title,
         description: blog.meta_description || blog.short_desc,
+        alternates: {
+            canonical: `https://www.theelegance.co.in/blog/${slug}`,
+        },
         openGraph: {
             title: blog.title,
             description: blog.short_desc,
