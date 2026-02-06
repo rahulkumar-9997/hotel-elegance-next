@@ -26,24 +26,14 @@ async function getBlogList() {
     }
 }
 export async function generateMetadata() {
-    try {
-        const data = await getBlogList();       
-        return {
-            title: 'Hotel & Travel Blog in Varanasi | Stay, Food & Nearby Places',
-            description: `Explore our Varanasi travel blog covering hotel stays, nearby attractions, food experiences, travel tips, and insights for a memorable visit.`,
-            alternates: {
-                canonical: "https://www.theelegance.co.in/blog",
-            },
-        };
-    } catch (error) {
-        return {
-            title: 'Hotel & Travel Blog in Varanasi | Stay, Food & Nearby Places',
-            description: `Explore our Varanasi travel blog covering hotel stays, nearby attractions, food experiences, travel tips, and insights for a memorable visit.`,
-            alternates: {
-                canonical: "https://www.theelegance.co.in/blog",
-            },
-        };
-    }
+    return {
+        title: "Hotel & Travel Blog in Varanasi | Stay, Food & Nearby Places",
+        description:
+            "Explore our Varanasi travel blog covering hotel stays, nearby attractions, food experiences, travel tips, and insights for a memorable visit.",
+        alternates: {
+            canonical: "https://www.theelegance.co.in/blog",
+        },
+    };
 }
 
 export default async function BlogPage() {
