@@ -3,11 +3,6 @@ import Footer from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import { ToastDisplay } from '@/components/ui/toast';
 import Script from "next/script";
-// export const metadata = {
-//   title: "The Elegance Best Hotel in Varanasi near Railway Station",
-//   description:
-//     "The Elegance - Best Boutique Hotel in Varanasi near Banaras Railway Station and BHU. Situated close to BLW, the Hotel is the best place for Stay in Varanasi.",
-// };
 
 export const metadata = {
   metadataBase: new URL('https://www.theelegance.co.in'),
