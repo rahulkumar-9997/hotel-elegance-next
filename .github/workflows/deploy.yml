@@ -19,3 +19,4 @@ jobs:
             npm install
             npm run build
             touch tmp/restart.txt || true
+            
