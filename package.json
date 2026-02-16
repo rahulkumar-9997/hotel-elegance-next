@@ -2,12 +2,10 @@
   "name": "dev-elegance-next-js",
   "version": "0.1.0",
   "private": true,
-  "type": "module", 
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "start": "next start"
   },
   "dependencies": {
     "@fancyapps/ui": "^6.1.7",
