@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.theelegance.co.in/sitemap.xml
