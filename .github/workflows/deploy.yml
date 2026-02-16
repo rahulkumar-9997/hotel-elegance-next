@@ -2,6 +2,7 @@ name: Deploy to MilesWeb
 on:
   push:
     branches: [main]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,7 +17,9 @@ jobs:
           port: ${{ secrets.SERVER_SSH_PORT }}
           script: |
             cd /home/jyddjslu/repositories/hotel-elegance-next
+            git reset --hard
+            git clean -fd
             git pull origin main
             npm install
             npm run build
-            touch tmp/restart.txt || true
+            touch tmp/restart.txt
