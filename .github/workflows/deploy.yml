@@ -3,7 +3,6 @@ name: Deploy to MilesWeb
 on:
   push:
     branches: [main]
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
