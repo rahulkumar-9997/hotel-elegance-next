@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+export const revalidate = 3600; 
 export default async function sitemap() {
   const baseUrl = "https://www.theelegance.co.in";
   const staticPages = [
