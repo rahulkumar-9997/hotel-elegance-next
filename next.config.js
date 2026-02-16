@@ -1,6 +1,5 @@
 
 const nextConfig = {
-  output: 'export',
   htmlLimitedBots: /.*/,
   images: {
     unoptimized: true,   
