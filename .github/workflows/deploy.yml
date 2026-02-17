@@ -15,7 +15,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           passphrase: ${{ secrets.SERVER_SSH_PASSPHRASE }}
           port: ${{ secrets.SERVER_SSH_PORT }}
-          script_stop: true
           script: |
             # Navigate to app directory
             cd /home/jyddjslu/repositories/hotelEleganceApp
@@ -27,55 +26,15 @@ jobs:
             # Pull latest code
             git pull origin main
 
-            # Install dependencies (using ci for cleaner installs)
-            npm ci
-
-            # 🔧 FIX FOR 404 ASSETS: Create symbolic link for assets
-            echo "🔗 Creating symbolic link for assets to fix 404 errors..."
-            # Remove old symlink if exists
-            rm -f /home/jyddjslu/repositories/hotelEleganceApp/assets
-            # Create new symlink from public/assets to root assets
-            ln -sf /home/jyddjslu/repositories/hotelEleganceApp/public/assets /home/jyddjslu/repositories/hotelEleganceApp/assets
-            
-            # Verify the symlink was created
-            echo "✅ Symlink created:"
-            ls -la /home/jyddjslu/repositories/hotelEleganceApp/assets | head -5
+            # Install dependencies
+            npm install
 
             # Build Next.js app for production
-            echo "🏗️ Building Next.js app..."
             npm run build
-
-            # 🛡️ Additional fix: Create assets folder in .next if needed for standalone
-            if [ -d ".next/standalone" ]; then
-              echo "📁 Setting up assets in standalone mode..."
-              mkdir -p .next/standalone/public
-              cp -r public/* .next/standalone/public/ 2>/dev/null || echo "No public files to copy"
-              # Create symlink in standalone as well
-              ln -sf /home/jyddjslu/repositories/hotelEleganceApp/public/assets .next/standalone/assets 2>/dev/null || echo "Symlink in standalone"
-            fi
-
-            # 🔧 Fix permissions to ensure files are readable
-            echo "🔧 Fixing file permissions..."
-            find public -type d -exec chmod 755 {} \;
-            find public -type f -exec chmod 644 {} \;
-            
-            # If assets symlink exists, ensure its permissions
-            if [ -L "assets" ]; then
-              chmod 755 public/assets
-            fi
 
             # Ensure tmp folder exists and restart file is touched
             mkdir -p tmp
             touch tmp/restart.txt
 
-            # 🏥 Optional: Test if assets are now accessible
-            echo "🏥 Testing asset accessibility..."
-            if [ -f "public/assets/css/style.css" ]; then
-              echo "✅ CSS files found in public/assets/css/"
-              ls -la public/assets/css/ | head -10
-            else
-              echo "⚠️ Warning: CSS files not found in public/assets/css/"
-            fi
-
-            # Log deployed time
-            echo "✅ Deployment completed at $(date)"
+            # Optional: log deployed time
+            echo "Deployment completed at $(date)"
