@@ -17,7 +17,7 @@ jobs:
           port: ${{ secrets.SERVER_SSH_PORT }}
           script: |
             # Navigate to app directory
-            cd /home/jyddjslu/repositories/hotel-elegance-next
+            cd /home/jyddjslu/public_html/hotelEleganceApp
 
             # Reset local changes and remove untracked files
             git reset --hard
