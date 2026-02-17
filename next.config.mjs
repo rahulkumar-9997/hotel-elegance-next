@@ -1,12 +1,13 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  assetPrefix: '',
+
   images: {
-    unoptimized: true,   
+    unoptimized: true,
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "www.inforbit.in",
+        protocol: 'https',
+        hostname: 'www.inforbit.in',
       },
     ],
   },
