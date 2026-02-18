@@ -35,6 +35,5 @@ jobs:
             # Ensure tmp folder exists and restart file is touched
             mkdir -p tmp
             touch tmp/restart.txt
-
             # Optional: log deployed time
             echo "Deployment completed at $(date)"
