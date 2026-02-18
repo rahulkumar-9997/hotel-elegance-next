@@ -23,8 +23,5 @@ jobs:
             git clean -fd
             git pull origin main
 
-            npm install
-            npm run build
-
-            pm2 restart hotel-elegance || pm2 start npm --name hotel-elegance -- start
-            pm2 save
+            # Use CloudLinux node env npm
+            /home/jyddjslu/nodevenv/hotelEleganceApp/22/bin/npm run build
