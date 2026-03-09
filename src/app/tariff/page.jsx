@@ -81,9 +81,9 @@ export default function tariffPage() {
                                         className="svg-img right-side"
                                     />
                                 </p>
-                                <h1 className="text-4xl md:text-5xl font-bold mt-4 text-black">
+                                <h2 className="text-4xl md:text-5xl font-bold mt-4 text-black">
                                     Best Room Tariff in Varanasi
-                                </h1>
+                                </h2>
                                 <p className="mt-6 text-lg text-black max-w-3xl mx-auto">
                                     Are you planning a trip to Varanasi, India's heart of spirit? We'll guide you to the best spots to stay. Varanasi's got history and charm, and we want you comfy on your trip. Here's the best rooms at The Elegance Hotel:
                                 </p>

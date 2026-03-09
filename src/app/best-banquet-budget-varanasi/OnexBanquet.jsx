@@ -130,9 +130,9 @@ const OnexBanquet = ({ onexData }) => {
                                     className="svg-img right-side"
                                 />
                             </p>
-                            <h1>
+                            <h2>
                                 Best Banquets near DLW Varanasi <span>by Hotel Elegance</span>
-                            </h1>
+                            </h2>
                             <h2 className="mt-1 text-xl banquate-2">
                                 Amazing & Perfect place for your Special Celebrations.
                             </h2>

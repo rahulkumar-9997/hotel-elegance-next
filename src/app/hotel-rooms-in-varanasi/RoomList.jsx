@@ -100,9 +100,9 @@ export default function RoomsListPage() {
                                             className="svg-img right-side"
                                         />
                                     </p>
-                                    <h1>
+                                    <h2>
                                        {roomsData.pageContent.title}
-                                    </h1>
+                                    </h2>
                                 </div>
                             </div>
                         </div>

@@ -49,9 +49,9 @@ export default function RestaurantPage() {
                                         className="svg-img right-side"
                                     />
                                 </p>
-                                <h1>
+                                <h2>
                                     Best Indian Restaurant in Varanasi by  <span>Hotel Elegance</span>
-                                </h1>
+                                </h2>
                             </div>
                         </div>
                         <div

@@ -61,9 +61,9 @@ export default async function FacilitiesPage() {
                                         Facilities
                                         <RightShapeSVG />
                                     </p>
-                                    <h1>
+                                    <h2>
                                         Best Boutique Hotel in Varanasi
-                                    </h1>
+                                    </h2>
                                     <p className="mt-2">We're dedicated to helping you achieve and maintain beautiful, healthy eye. Trust us to provide exceptional care tailored to you. Personalized, compassionate car</p>
                                 </div>
                             </div>

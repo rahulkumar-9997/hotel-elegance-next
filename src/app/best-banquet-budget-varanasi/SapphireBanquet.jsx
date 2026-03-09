@@ -106,9 +106,9 @@ const SapphireBanquet = ({ sapphireData }) => {
                                         className="svg-img right-side"
                                     />
                                 </p>
-                                <h1>
+                                <h2>
                                     Celebrate Moments in Unmatched Elegance.
-                                </h1>
+                                </h2>
 
                                 <div className="mt-3">
                                     <p>
@@ -145,9 +145,9 @@ const SapphireBanquet = ({ sapphireData }) => {
                                     className="svg-img right-side"
                                 />
                             </p>
-                            <h1>
+                            <h2>
                                 Celebrate Moments in Unmatched Elegance.
-                            </h1>
+                            </h2>
 
                             <div className="mt-3">
                                 <p>
@@ -157,6 +157,7 @@ const SapphireBanquet = ({ sapphireData }) => {
                         </div>
                     </div>
                 </div>
+                
                 <div className="row mb-minus-24">
                     <div className="col-12" data-aos="fade-up" data-aos-duration="1000">
                         <div className="relative">

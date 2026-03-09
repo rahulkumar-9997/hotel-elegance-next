@@ -65,9 +65,9 @@ export default async function TafriLoungePage() {
                                     <img alt="banner-right-shape" className="svg-img right-side" src="assets/img/banner/right-shape.svg"
                                     />
                                 </p>
-                                <h1>
+                                <h2>
                                     Best Lounge in Varanasi Tafri by Elegance near BHU
-                                </h1>
+                                </h2>
                             </div>
                         </div>
                     </div>
