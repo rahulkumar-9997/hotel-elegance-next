@@ -5327,12 +5327,15 @@ figure {
   width: 100%;
   border-radius: 30px;
 }
-.blog-post-data ul{    
+.blog-post-data ul,
+.blog-post-data ol
+{    
     list-style: none;
     padding: 10px 0 10px 10px;
     position: relative;
 }
-.blog-post-data ul li{
+.blog-post-data ul li,
+.blog-post-data ol li{
     position: relative;
     font-weight: 500;
     line-height: 24px;
@@ -5341,7 +5344,8 @@ figure {
 }
 
 
-.blog-single .ttr-post-text.blog-post-data ul li {  
+.blog-single .ttr-post-text.blog-post-data ul li,
+.blog-single .ttr-post-text.blog-post-data ol li {  
     padding: 0px;
     position: relative;
     line-height: 1.7em;
@@ -5349,7 +5353,8 @@ figure {
     padding-left: 25px;
     /* text-align: justify; */
 }
-.blog-post-data ul li:before {
+.blog-post-data ul li:before,
+.blog-post-data ol li:before {
     font-family: "remixicon";
     font-weight: 900;
     font-size: 16px;
@@ -5361,12 +5366,14 @@ figure {
     top: -1px;
     color: #390901;
 }
-.blog-single .ttr-post-text.blog-post-data ul li h5 {
+.blog-single .ttr-post-text.blog-post-data ul li h5,
+.blog-single .ttr-post-text.blog-post-data ol li h5 {
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0px;
 }
-.blog-single .ttr-post-text.blog-post-data ul li h5 strong
+.blog-single .ttr-post-text.blog-post-data ul li h5 strong,
+.blog-single .ttr-post-text.blog-post-data ol li h5 strong
 {
     font-size: 18px;
     line-height: 25px;
