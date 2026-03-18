@@ -49,7 +49,7 @@ export default function NearByPlaceDetailsPage({ initialData }) {
                                             {place.short_desc}
                                         </p>
                                         <div
-                                            className="place-description"
+                                            className="place-description blog-post-data"
                                             dangerouslySetInnerHTML={{ __html: place.long_description }}
                                         />
                                     </div>
