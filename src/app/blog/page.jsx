@@ -6,7 +6,10 @@ import BlogSkeleton from "./BlogSkeleton";
 async function getBlogList() {
     try {
         const res = await fetch(
-            "https://www.inforbit.in/demo/hotel-elegance-backend/api/blog"
+            "https://www.inforbit.in/demo/hotel-elegance-backend/api/blog",
+            {
+                cache: "no-store",
+            }
         );
 
         if (!res.ok) {
