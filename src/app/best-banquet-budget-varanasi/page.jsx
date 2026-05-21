@@ -5,7 +5,10 @@ import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 async function getOnexBanquetData() {
     try {
         const res = await fetch(
-            'https://www.inforbit.in/demo/hotel-elegance-backend/api/banquets/onex-banquet'
+            'https://www.inforbit.in/demo/hotel-elegance-backend/api/banquets/onex-banquet',
+            {
+                cache: "no-store",
+            }
         ); 
         if (!res.ok) {
             throw new Error(`Failed to fetch Onex Banquet data: ${res.status}`);
@@ -20,7 +23,10 @@ async function getOnexBanquetData() {
 async function getSapphireBanquetData() {
     try {
         const res = await fetch(
-            'https://www.inforbit.in/demo/hotel-elegance-backend/api/banquets/sapphire-banquet'
+            'https://www.inforbit.in/demo/hotel-elegance-backend/api/banquets/sapphire-banquet',
+            {
+                cache: "no-store",
+            }
         );
         
         if (!res.ok) {
