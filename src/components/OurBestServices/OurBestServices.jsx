@@ -29,7 +29,7 @@ export const OurBestServices = () => {
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
                     >
-                        <div className="rx-services">
+                        <div className="rx-services bg-white rounded-xl shadow-[0_0px_30px_rgba(0,0,0,0.09)]">
                             <div className="services-ico">
                                 <img src="assets/img/services/front-desk-and-guest-support.svg" alt="front-desk" className="svg-img" />
                             </div>
@@ -48,7 +48,7 @@ export const OurBestServices = () => {
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
                     >
-                        <div className="rx-services">
+                        <div className="rx-services bg-white rounded-xl shadow-[0_0px_30px_rgba(0,0,0,0.09)]">
                             <div className="services-ico">
                                 <img src="assets/img/services/room-and-comfort-services.svg" alt="room-services" className="svg-img" />
                             </div>
@@ -67,7 +67,7 @@ export const OurBestServices = () => {
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
                     >
-                        <div className="rx-services">
+                        <div className="rx-services bg-white rounded-xl shadow-[0_0px_30px_rgba(0,0,0,0.09)]">
                             <div className="services-ico">
                                 <img src="assets/img/services/connectivity-and-utilities.svg" alt="connectivity" className="svg-img" />
                             </div>
@@ -86,7 +86,7 @@ export const OurBestServices = () => {
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
                     >
-                        <div className="rx-services">
+                        <div className="rx-services bg-white rounded-xl shadow-[0_0px_30px_rgba(0,0,0,0.09)]">
                             <div className="services-ico">
                                 <img src="assets/img/services/dining-and-lounge-services.svg" alt="dining" className="svg-img" />
                             </div>
@@ -105,7 +105,7 @@ export const OurBestServices = () => {
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
                     >
-                        <div className="rx-services">
+                        <div className="rx-services bg-white rounded-xl shadow-[0_0px_30px_rgba(0,0,0,0.09)]">
                             <div className="services-ico">
                                 <img src="assets/img/services/business-events.svg" alt="room-facilities" className="svg-img" />
                             </div>
@@ -124,7 +124,7 @@ export const OurBestServices = () => {
                     <div
                         className="col-xl-4 col-lg-4 col-sm-12 col-12 mb-4"
                     >
-                        <div className="rx-services">
+                        <div className="rx-services bg-white rounded-xl shadow-[0_0px_30px_rgba(0,0,0,0.09)]">
                             <div className="services-ico">
                                 <img src="assets/img/services/parking-and-accessibility.svg" alt="parking" className="svg-img" />
                             </div>

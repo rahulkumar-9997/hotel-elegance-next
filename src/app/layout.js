@@ -25,17 +25,17 @@
               href="/assets/dev-img/logo/fav.png"
               type="image/png"
             />
-            <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css?v=6.0.0" />
-            <link rel="stylesheet" href="/assets/css/vendor/remixicon.css?v=6.0.0" />
+            <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css?v=7.0.0" />
+            <link rel="stylesheet" href="/assets/css/vendor/remixicon.css?v=7.0.0" />
             {/* <link rel="stylesheet" href="assets/css/vendor/aos.css" /> */}
             {/* <link rel="stylesheet" href="assets/css/vendor/animate.min.css" /> */}
             {/* <link rel="stylesheet" href="assets/css/vendor/jquery.fancybox.min.css"/> */}
-            <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css?v=6.0.0"/>
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css?v=7.0.0"/>
             {/* <link rel="stylesheet" href="assets/css/vendor/slick.min.css" />
             <link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css" />
             <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css" /> */}
             {/* Main Style */}
-            <link rel="stylesheet" href="/assets/css/style.css?v=7.0.0" />        
+            <link rel="stylesheet" href="/assets/css/style.css?v=8.0.0" />        
           </head>
           <body>
             <div className="page-wraper">

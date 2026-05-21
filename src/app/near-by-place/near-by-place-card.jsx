@@ -37,7 +37,7 @@ export function NeatByPlaceListPage({ initialNearByPlace }) {
                                 key={place.id}
                                 className="col-xl-3 col-lg-4 col-sm-6 mb-24"
                                 {...getAOSProps(index * 200)}                            >
-                                <div className="rx-spa-card">
+                                <div className="rx-spa-card shadow-[0_0px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_25px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-20">
                                     <Link href={`/near-by-place/${place.slug}`}>
                                         <div className="spa-img">
                                             <img

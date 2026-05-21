@@ -133,6 +133,16 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
+            <a
+                href="https://api.whatsapp.com/send?phone=+918810719088&text=Hi! I need your help with a booking for Hotel Elegance"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white text-sm font-medium px-3 py-2 rounded-full shadow-lg hover:bg-[#1ebe5d] hover:shadow-xl transition-all duration-300"
+                aria-label="Chat with us on WhatsApp"
+            >
+                <i className="ri-whatsapp-line text-xl leading-none" />
+                <span>WhatsApp Us</span>
+            </a>
             {/* Back to top  */}
             <a href="#Top" className="back-to-top result-placeholder">
                 <i className="ri-arrow-up-double-fill" />

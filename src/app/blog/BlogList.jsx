@@ -14,7 +14,7 @@ export default function BlogList({ initialBlogData }) {
                         href={`/blog/${blog.slug}`}
                         className="text-decoration-none"
                     >
-                        <div className="rx-spa-card">
+                        <div className="rx-spa-card shadow-[0_0px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_25px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-20">
                             <div className="single-item d-grid gap-2 transition d-center">
                                 <div className="spa-img position-relative image-file">
                                     <Image
