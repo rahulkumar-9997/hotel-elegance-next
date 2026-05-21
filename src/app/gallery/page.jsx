@@ -5,10 +5,11 @@ import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 async function getAlbumGallery(albumId = null) {
     try {
         let url = 'https://www.inforbit.in/demo/hotel-elegance-backend/api/album-gallery';
+        let fetchOptions = { cache: "no-store" };
         if (albumId) {
             url += `?album_id=${albumId}`;
         }
-        const res = await fetch(url);
+        const res = await fetch(url, fetchOptions);
         if (!res.ok) {
             throw new Error(`Failed to fetch gallery data: ${res.status}`);
         }
