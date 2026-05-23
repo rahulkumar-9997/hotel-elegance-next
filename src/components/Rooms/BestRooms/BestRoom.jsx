@@ -54,7 +54,7 @@ export const BestRoom = () => {
                                         <h5>Suite Room</h5>
                                         <span className="rx-price">Rs. 7500 / N</span>
                                     </div>
-                                    <div className="inner-info hover:text-white">
+                                    <div className="inner-info hover    :text-white">
                                         <ul>
                                             <li>Daily cleaning</li>
                                             <li>Room Service</li>
