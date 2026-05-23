@@ -91,9 +91,9 @@ export const roomsData = {
       meta_desc: "Stay in well-maintained standard hotel rooms in Varanasi offering comfort, essential amenities, and a convenient location for a pleasant stay.",
       subtitle: "No. of Standard Rooms : 19",
       price: 4000,
-      image: "/assets/dev-img/room/king-size-room.jpg",
+      image: "/assets/dev-img/room/standard-room.jpg",
       gallery: [
-        "/assets/dev-img/room/king-size-room.jpg",
+        "/assets/dev-img/room/standard-room.jpg",
       ],
       amenities: [
         { icon: "Bed", label: "Emperor Bed" },

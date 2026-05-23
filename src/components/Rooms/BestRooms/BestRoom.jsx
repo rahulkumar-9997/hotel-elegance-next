@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { imageTosvg } from '@/utils/imageToSvg';
 import EnquiryModal from '@/components/EnquiryModal/EnquiryModal';  
 export const BestRoom = () => {
@@ -53,7 +54,7 @@ export const BestRoom = () => {
                                         <h5>Suite Room</h5>
                                         <span className="rx-price">Rs. 7500 / N</span>
                                     </div>
-                                    <div className="inner-info">
+                                    <div className="inner-info hover    :text-white">
                                         <ul>
                                             <li>Daily cleaning</li>
                                             <li>Room Service</li>
@@ -61,7 +62,7 @@ export const BestRoom = () => {
                                             <li>Wi-Fi &amp; Parking</li>
                                         </ul>
                                     </div>
-                                    <div className="rx-button">
+                                    <div className="rx-button flex justify-between items-center gap-2 w-full">
                                         <a className="rx-btn-one cursor-pointer"  
                                         onClick={() => {
                                             setTitle("Suite Room")
@@ -69,14 +70,15 @@ export const BestRoom = () => {
                                             }}>
                                             Book Now
                                         </a>
+                                        <Link className="rx-btn-one cursor-pointer" href="hotel-rooms-in-varanasi/suite-room">
+                                            View Details
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="col-lg-4 col-md-6 col-sm-12 col-12 mb-24"
-                    >
+                    <div className="col-lg-4 col-md-6 col-sm-12 col-12 mb-24">
                         <div className="rx-rooms-box-2">
                             <div className="rx-rooms-img">
                                 <img src="assets/dev-img/room/premium-room.jpg" alt="room-5" />
@@ -93,7 +95,7 @@ export const BestRoom = () => {
                                             <li>Wi-Fi &amp; Parking</li>
                                         </ul>
                                     </div>
-                                    <div className="rx-button">
+                                    <div className="rx-button flex justify-between items-center gap-2 w-full">
                                         <a className="rx-btn-one cursor-pointer"  
                                         onClick={() => {
                                             setTitle("Premium Rooms")
@@ -101,17 +103,18 @@ export const BestRoom = () => {
                                             }}>
                                             Book Now
                                         </a>
+                                        <Link className="rx-btn-one cursor-pointer" href="hotel-rooms-in-varanasi/premium-room">
+                                            View Details
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="col-lg-4 col-md-6 col-sm-12 col-12 mb-24"
-                    >
+                    <div className="col-lg-4 col-md-6 col-sm-12 col-12 mb-24">
                         <div className="rx-rooms-box-2">
                             <div className="rx-rooms-img">
-                                <img src="assets/dev-img/room/king-size-room.jpg" alt="room-6" />
+                                <img src="assets/dev-img/room/standard-room.jpg" alt="room-6" />
                                 <div className="inner-back-side">
                                     <div className="sub-title">
                                         <h5>Standard Rooms</h5>
@@ -125,14 +128,19 @@ export const BestRoom = () => {
                                             <li>Wi-Fi &amp; Parking</li>
                                         </ul>
                                     </div>
-                                    <div className="rx-button">
-                                        <a className="rx-btn-one cursor-pointer"  
-                                        onClick={() => {
-                                            setTitle("Standard Rooms")
-                                            setIsModalOpen(true)
-                                            }}>
+                                    <div className="rx-button flex justify-between items-center gap-2 w-full">
+                                        <a
+                                            className="rx-btn-one cursor-pointer"
+                                            onClick={() => {
+                                                setTitle("Standard Rooms");
+                                                setIsModalOpen(true);
+                                            }}
+                                        >
                                             Book Now
                                         </a>
+                                        <Link className="rx-btn-one cursor-pointer" href="hotel-rooms-in-varanasi/standard-room">
+                                            View Details
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
