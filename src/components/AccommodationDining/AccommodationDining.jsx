@@ -18,7 +18,7 @@ export const AccommodationDining = () => {
     const [items] = React.useState([
         {
             id: 1,
-            bigImage: "https://www.inforbit.in/demo/hotel-elegance-backend/public/storage/gallery/gallery_6957666b5d1e0.webp",
+            bigImage: "assets/dev-img/accommodation/big-img/multi-cuisiner-restaurant.jpg",
             logo: "assets/dev-img/accommodation/multi-cuisine-restaurant.jpeg",
             title: "Multi-Cuisine Restaurant",
             subtitle: "Best in Banaras",
