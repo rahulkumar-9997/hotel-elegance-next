@@ -4,7 +4,10 @@ import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 async function getTafriLoungeImages() {
     try {
         const res = await fetch(
-            'https://www.inforbit.in/demo/hotel-elegance-backend/api/tafri-lounge-image',            
+            'https://www.inforbit.in/demo/hotel-elegance-backend/api/tafri-lounge-image',  
+            {
+                cache: "no-store",
+            }    
         );
 
         if (!res.ok) {
