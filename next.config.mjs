@@ -2,7 +2,7 @@
 const nextConfig = {
   htmlLimitedBots: /.*/,
   images: {
-    unoptimized: true,   
+    unoptimized: false,   
     remotePatterns: [
       {
         protocol: "https",

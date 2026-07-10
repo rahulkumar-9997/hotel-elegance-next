@@ -47,10 +47,10 @@ export const NearByPlace = ({ initialNearByPlace = [] }) => {
                                         <Image
                                             src={place.image_url}
                                             alt={place.title}
-                                            className="w-full object-cover"
-                                            width={200}
-                                            height={200}
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                                            className="w-full max-w-100 h-auto object-contain"
+                                            width={400}
+                                            height={300}
+                                            sizes="(max-width: 768px) 100vw, 400px"
                                         />
                                     </div>
                                     <div className="spa-contact p-4">
