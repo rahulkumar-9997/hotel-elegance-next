@@ -42,13 +42,17 @@ export const HomeBlog = ({ initialBlogData }) => {
                             <Link href={`/blog/${blog.slug}`} className="text-decoration-none">
                                 <div className="rx-spa-card shadow-[0_0px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_25px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-20">
                                     <div className="single-item d-grid gap-2 gap-md-2 transition d-center">
-                                        <div className="spa-img img-area position-relative d-center image-file">
-                                            <Image className="w-100 border-radius"
-                                                src={blog.featured_image}
-                                                alt={blog.title}
-                                                width={400}
-                                                height={300}
-                                            />
+                                        <div className="spa-img img-area position-relative d-center image-file1">
+                                            <div className="w-full flex justify-center">
+                                                <Image
+                                                    src={blog.featured_image}
+                                                    alt={blog.title || "Blog Image"}
+                                                    width={400}
+                                                    height={300}
+                                                    sizes="(max-width: 768px) 100vw, 400px"
+                                                    className="w-full max-w-100 h-auto rounded-lg object-contain"
+                                                />
+                                            </div>
                                         </div>
                                         <div className="spa-contact">
                                             <h4>{blog.title}</h4>

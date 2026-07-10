@@ -35,7 +35,7 @@
             <link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css" />
             <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css" /> */}
             {/* Main Style */}
-            <link rel="stylesheet" href="/assets/css/style.css?v=8.0.0" />        
+            <link rel="stylesheet" href="/assets/css/style.css?v=4.3.1.0" />        
           </head>
           <body>
             <div className="page-wraper">

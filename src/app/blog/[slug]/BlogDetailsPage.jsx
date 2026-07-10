@@ -30,15 +30,14 @@ export default function BlogDetailsPage({ blog }) {
                         <div className="rx-blog-details">
                             <div className="rx-blog-details-cart">
                                 {blog.featured_image && (
-                                    <div className="blog-details-img">
+                                    <div className="w-full">
                                         <Image
                                             src={blog.featured_image}
                                             alt={blog.title || "Blog Featured Image"}
-                                            className="blog-de-image"
-                                            width={400}
-                                            height={250}
-                                            sizes=""
-                                            style={{ height: "400px", objectFit: "cover" }}
+                                            width={1200}
+                                            height={800}
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
+                                            className="w-full h-auto rounded-lg object-contain"
                                         />
                                     </div>
                                 )}
