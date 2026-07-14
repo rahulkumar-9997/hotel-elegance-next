@@ -29,7 +29,7 @@ export default function tariffPage() {
     const rooms = [
         {
             title: "SUITE ROOM",
-            image: "/assets/dev-img/room/page/suite-room-w15.jpg",
+            image: "/assets/dev-img/room/suite-room.jpg",
             doublePrice: "Rs. 7500",
             singlePrice: "Rs. 6500",
             features: ["Luxury Living", "City View", "Private Balcony", "King Size Bed"],
@@ -37,7 +37,7 @@ export default function tariffPage() {
         },
         {
             title: "PREMIUM ROOM",
-            image: "/assets/dev-img/room/page/premium-room.jpg",
+            image: "/assets/dev-img/room/premium-room.jpg",
             doublePrice: "Rs. 6000",
             singlePrice: "Rs. 5000",
             features: ["Spacious", "Work Desk", "Double Bed"],
@@ -45,7 +45,7 @@ export default function tariffPage() {
         },
         {
             title: "STANDARD ROOM",
-            image: "/assets/dev-img/room/page/standard-room.jpg",
+            image: "/assets/dev-img/room/standard-room.jpg",
             doublePrice: "Rs. 5000",
             singlePrice: "Rs. 4000",
             features: ["Comfort Plus", "Garden View", "Coffee Maker"],
