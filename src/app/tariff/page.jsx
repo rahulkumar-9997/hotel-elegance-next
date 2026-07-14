@@ -31,23 +31,20 @@ export default function tariffPage() {
             title: "SUITE ROOM",
             image: "/assets/dev-img/room/suite-room.jpg",
             doublePrice: "Rs. 7500",
-            singlePrice: "Rs. 6500",
-            features: ["Luxury Living", "City View", "Private Balcony", "King Size Bed"],
+            features: ["Luxury Living", "Private Balcony", "King Size Bed"],
             highlight: "Most Popular"
         },
         {
             title: "PREMIUM ROOM",
             image: "/assets/dev-img/room/premium-room.jpg",
             doublePrice: "Rs. 6000",
-            singlePrice: "Rs. 5000",
             features: ["Spacious", "Work Desk", "Double Bed"],
             highlight: "Best Value"
         },
         {
             title: "STANDARD ROOM",
             image: "/assets/dev-img/room/standard-room.jpg",
-            doublePrice: "Rs. 5000",
-            singlePrice: "Rs. 4000",
+            doublePrice: "Rs. 4000",
             features: ["Comfort Plus", "Garden View", "Coffee Maker"],
             highlight: null
         },
@@ -151,36 +148,18 @@ export default function tariffPage() {
                                                 </div>
                                                 <div className="border-t border-gray-100 pt-6">
                                                     <div className="flex flex-col space-y-4">
-                                                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                                                            <div className="flex items-center space-x-3">
-                                                                <div className="w-8 h-8 flex items-center justify-center bg-[#410f06] rounded-lg">
-                                                                    <span className="text-[#ffff] font-bold">1</span>
-                                                                </div>
-                                                                <div>
-                                                                    <p className="text-sm font-medium text-black">Single Occupancy</p>
-                                                                </div>
-                                                            </div>
-                                                            <CardItem
-                                                                translateZ={30}
-                                                                className="text-xl font-bold text-black"
-                                                            >
-                                                                {room.singlePrice}
-                                                            </CardItem>
-                                                        </div>
+                                                        
                                                         <div className="flex items-center justify-between p-3 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl">
-                                                            <div className="flex items-center space-x-3">
-                                                                <div className="w-8 h-8 flex items-center justify-center bg-[#410f06] rounded-lg">
-                                                                    <span className="text-white font-bold">2</span>
-                                                                </div>
+                                                            <div className="flex items-center space-x-3">                   
                                                                 <div>
-                                                                    <p className="text-sm font-medium text-black">Double Occupancy</p>
+                                                                    <p className="text-sm font-medium text-black">Starting from</p>
                                                                 </div>
                                                             </div>
                                                             <CardItem
                                                                 translateZ={30}
                                                                 className="text-2xl font-bold text-black"
                                                             >
-                                                                {room.doublePrice}
+                                                                {room.doublePrice} / night
                                                             </CardItem>
                                                         </div>
                                                     </div>
